@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   var Fitness = sequelize.define("Fitness", {
     cal_goals: DataTypes.INTEGER,
     cal_burned: DataTypes.INTEGER,
@@ -8,9 +8,9 @@ module.exports = function(sequelize, DataTypes) {
     user_age: DataTypes.INTEGER,
   });
 
-  Fitness.associate = function(models) {
-    Fitness.belongsTo (models.User, {
-        foreignKey: {
+  Fitness.associate = function (models) {
+    Fitness.belongsTo(models.User, {
+      foreignKey: {
         allowNull: false
       }
     })
