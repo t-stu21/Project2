@@ -1,32 +1,94 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+<div class="row">
+    <div class="container-fluid">
+        <div class="app">
+          <div class="header">
+            <div class="fat-burning">
+              <span class="title">
+                Fat burning
+              </span>
+              <span class="result">
+                <span class="num">2351</span>
+                <span class="unit">
+                  Kcal
+                </span>
+              </span>
+            </div>
+            <img src="https://via.placeholder.com/140x100" class="user-img" alt="" />
+            <div class="user-attendance">
+              <span class="title text-center">
+                Attendance
+              </span>
+              <span class="result">
+                <span class="num">12</span>
+                <span class="unit">
+                  day
+                </span>
+              </span>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
+        <div class="app-title">
+          <div class="title-text text-center">Alyve</div>
+        </div>
+          <div class="body">
+            <div class="attendance" id="goal">
+              
+              <ul>
+                <li>Mon
+                  <span class="circle present"></span>
+                  <span class="date">20</span>
+                </li>
+                <li>Tue
+                  <span class="circle absent"></span>
+                  <span class="date">21</span>
+                </li>
+                <li>Wed
+                  <span class="circle present"></span>
+                  <span class="date">22</span>
+                </li>
+                <li>Thu
+                  <span class="circle present"></span>
+                  <span class="date">23</span>
+                </li>
+                <li>Fri
+                  <span class="circle absent"></span>
+                  <span class="date">24</span>
+                </li>
+                <li>Sat
+                  <span class="circle present"></span>
+                  <span class="date">25</span>
+                </li>
+                <li>Sun
+                  <span class="circle off"></span>
+                  <span class="date">26</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
-      </div>
+           
+          <div class="graph">
+            <ul>
+              <li class="graph-knob-mt-100">
+                20
+              </li>
+              <li class="graph-knob-mt-50">
+                21
+              </li>
+              <li class="graph-knob-mt-70">
+                22
+              </li>
+              <li class="graph-knob-mt-110">
+                23
+              </li>
+              <li class="graph-knob-mt-50">
+                24
+              </li>
+              <li class="graph-knob-mt-60">
+                25
+              </li>
+            </ul>
+          </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
