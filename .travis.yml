@@ -13,6 +13,7 @@ env:
   - NODE_ENV=test
 
 before_script:
+  - mysql -e 'CREATE DATABASE testdb;'
   - npm install -g sequelize-cli
   - npm install mysql2 -g
   - sequelize db:migrate
