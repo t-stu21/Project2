@@ -17,10 +17,10 @@
           <div class="header">
             <div class="fat-burning">
               <span class="title">
-                Fat burning
+                Todays Result
               </span>
               <span class="result">
-                <span class="num">2351</span>
+                <span class="num">0000</span>
                 <span class="unit">
                   Kcal
                 </span>
@@ -28,13 +28,13 @@
             </div>
             <img src="https://via.placeholder.com/140x100" class="user-img" alt="" />
             <div class="user-attendance">
-              <span class="title text-center">
-                Attendance
+              <span class="title text-center goal">
+                Daily Goal
               </span>
               <span class="result">
-                <span class="num">12</span>
-                <span class="unit">
-                  day
+                <span class="num" id="goal">0000</span>
+                <span class="unit" id="goal-unit">
+                  Kcal
                 </span>
               </span>
             </div>
@@ -47,32 +47,42 @@
               
               <ul>
                 <li>Mon
-                  <span class="circle present"></span>
+                  <span class="lyve">Lyve</span>
                   <span class="date">20</span>
+                   <span class="circle present"></span>
                 </li>
                 <li>Tue
-                  <span class="circle absent"></span>
+                  <span class="lyve">Game Day</span>
                   <span class="date">21</span>
+                   <span class="circle present"></span>
                 </li>
                 <li>Wed
-                  <span class="circle present"></span>
+                  <span class="rest">Rest</span>
                   <span class="date">22</span>
+                  <span class="circle absent"></span>
+                 
                 </li>
                 <li>Thu
+                  <span class="lyve">Game Day</span>
+                   <span class="date">23</span>
                   <span class="circle present"></span>
-                  <span class="date">23</span>
+                 
                 </li>
                 <li>Fri
-                  <span class="circle absent"></span>
+                  <span class="rest">Rest</span>
                   <span class="date">24</span>
+                   <span class="circle absent"></span>
                 </li>
                 <li>Sat
-                  <span class="circle present"></span>
+                  
+                  <span class="lyve">Game Day</span>
                   <span class="date">25</span>
+                  <span class="circle present"></span>
                 </li>
                 <li>Sun
-                  <span class="circle off"></span>
+                  <span class="rest">Rest</span>
                   <span class="date">26</span>
+                  <span class="circle off"></span>
                 </li>
               </ul>
             </div>
@@ -82,6 +92,8 @@
 <div class ="buttons">
  <button type="button" class="btn btn-light text-center"><h1 id="button1">Automatic Burnt</h1></button>
  <button type="button" class="btn btn-light text-center"><h1 id="button2">Manual Burnt</h1></button>
+ <button type="button" class="btn btn-light text-center"><h1 id="button2">Chart</h1></button>
+ <button type="button" class="btn btn-light text-center"><h1 id="button2">Dietary Tips</h1></button>
 </div>
 </body>
 

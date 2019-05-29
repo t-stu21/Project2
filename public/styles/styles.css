@@ -1,21 +1,21 @@
 html, body {
   margin: 0;
   height: 100%;
+
+  
 }
 
 body
 {
   width: 100%;
   height: 100%;
-  font-family: Roboto, sans-serif;
+  font-family: 'Exo', sans-serif;
   background: #ff827c;
+  
+
 }
 
-.container
-{
-  height: 100%;
-  margin: 0 auto;
-}
+
 
 .app
 {
@@ -76,15 +76,15 @@ img.user-img
 
 .header > div > span.result .num
 {
-  font-family: Queen of Camelot Regular;
-  font-size: 28px;
+  font-family: 'Exo', sans-serif;;
+  font-size: 80px;
   color: #fff;
   margin-top: 5px;
 }
 
 .header > div > span.result .unit
 {
-  font-size: 12px;
+  font-size: 24px;
   color: rgba(255,255,255,0.3);
 }
 
@@ -196,7 +196,7 @@ img.user-img
 .body .stats .monthly-stats .rank
 {
   right: 12px;
-  font-family: Queen of Camelot Regular;
+  font-family: 'Exo', sans-serif;;
   font-size: 28px;
   color: #fff;
   letter-spacing: 1.5px;
@@ -242,6 +242,7 @@ img.user-img
   width: 16.66666666666667%;
   color: rgba(255,255,255,0.3);
   font-size: 12px;
+ 
 }
 
 .graph ul li:before
@@ -342,4 +343,23 @@ button {
 #button2 {
   color: white !important;
   
+}
+
+#goal, #goal-unit, .goal {
+  color: gold;
+}
+
+.graph-knob-mt-100 {
+  color: gold;
+}
+
+.goal-text {
+  color: gold;
+}
+
+.lyve {
+  color: gold;
+}
+.rest {
+  color: skyblue;
 }
