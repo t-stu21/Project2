@@ -1,0 +1,119 @@
+<form id="moving-calc">
+    <div class="calc-wrapper">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group"> <label>Choose an activity</label> <select id="selectActivity"
+                        class="form-control">
+                        <option value="6">aerobics</option>
+                        <option value="7">backpacking</option>
+                        <option value="4.5">badminton (singles)</option>
+                        <option value="5">baseball</option>
+                        <option value="6">basketball (half-court)</option>
+                        <option value="5">bicycling indoors (stationary bike) </option>
+                        <option value="5.5">bicycling stationary 100 w light effort </option>
+                        <option value="7">bicycling stationary 150 w moderate effort </option>
+                        <option value="4">bicycling outdoors &lt; 10 mph leisure</option>
+                        <option value="6">bicycling outdoors 10 - 11.9 mph leisure light effort</option>
+                        <option value="8">bicycling outdoors 12 - 13.9 mph leisure moderate effort</option>
+                        <option value="10">bicycling outdoors 14 - 15.9 mph fast or visorous effort</option>
+                        <option value="8">calisthenics pushups pullups situps vigorous effort</option>
+                        <option value="4.5">calisthenics home exercise light or moderate effort</option>
+                        <option value="8">conditioning exercise circuit training general</option>
+                        <option value="3">canoeing 2.0 - 3.9 mph light effort</option>
+                        <option value="5">kayaking</option>
+                        <option value="6">dancing ballet</option>
+                        <option value="3">dancing ballroom slow</option>
+                        <option value="5.5">dancing disco</option>
+                        <option value="4.5">dancing line</option>
+                        <option value="5.5">dancing swing</option>
+                        <option value="5.5">dancing (really kicking up your heels)</option>
+                        <option value="2.5">dusting</option>
+                        <option value="5.5">elliptical machine</option>
+                        <option value="8">football</option>
+                        <option value="3">frisbee</option>
+                        <option value="5">gardening</option>
+                        <option value="5.5">golfing (no carts please) carrying clubs</option>
+                        <option value="3.5">grocery shopping</option>
+                        <option value="12">handball</option>
+                        <option value="6">hiking</option>
+                        <option value="4.5">home repair (building hammering)</option>
+                        <option value="2.5">horseback riding </option>
+                        <option value="3.5">housecleaning</option>
+                        <option value="8">ice hockey</option>
+                        <option value="7">ice skating</option>
+                        <option value="2.3">ironing</option>
+                        <option value="7">jogging</option>
+                        <option value="8">running 5 mph ( 12 min mile)</option>
+                        <option value="10">running 6 mph 10 min mile</option>
+                        <option value="13.5">running 8 mph 7.5 min mile</option>
+                        <option value="10">karate</option>
+                        <option value="10">kickboxing</option>
+                        <option value="8">lacrosse</option>
+                        <option value="2">laundry/folding clothes</option>
+                        <option value="2">making the bed </option>
+                        <option value="4.5">mopping/scrubbing floors</option>
+                        <option value="4.5">mowing the lawn (no riding mowers please)</option>
+                        <option value="5">painting the house</option>
+                        <option value="6">pilates</option>
+                        <option value="4">ping pong</option>
+                        <option value="4">playing with kids at the playground</option>
+                        <option value="4">playing musical instrument - drums</option>
+                        <option value="2">playing musical instrument - guitar</option>
+                        <option value="2.5">playing musical instrument - piano</option>
+                        <option value="2.5">cooking</option>
+                        <option value="7">racquetball</option>
+                        <option value="4">raking</option>
+                        <option value="6">rearranging furniture</option>
+                        <option value="11">rock climbing (ascending)</option>
+                        <option value="8">rock climbing (repelling)</option>
+                        <option value="7">roller blading/skating</option>
+                        <option value="8">rope jumping</option>
+                        <option value="7">rowing</option>
+                        <option value="10">rugby</option>
+                        <option value="6">shoveling snow</option>
+                        <option value="7">sledding</option>
+                        <option value="8">snow skiing (cross-country)</option>
+                        <option value="6">snow skiing (downhill)</option>
+                        <option value="9.5">indoor skiing (on a machine)</option>
+                        <option value="7">soccer</option>
+                        <option value="5">softball</option>
+                        <option value="5">stacking firewood for winter</option>
+                        <option value="6">stair climbing</option>
+                        <option value="3">surfing</option>
+                        <option value="2.5">sweeping (inside)</option>
+                        <option value="6">swimming</option>
+                        <option value="10">tae kwon do</option>
+                        <option value="4">tai chi</option>
+                        <option value="6">tennis (doubles)</option>
+                        <option value="8">tennis (singles)</option>
+                        <option value="2.5">vacuuming</option>
+                        <option value="8">volleyball (beach)</option>
+                        <option value="3">volleyball (casual game)</option>
+                        <option value="4">walking (briskly)</option>
+                        <option value="4">walking to work or class leisure</option>
+                        <option value="2.5">walking pushing a stroller</option>
+                        <option value="3.5">walking with the dog</option>
+                        <option value="4.5">washing the car </option>
+                        <option value="2.3">washing the dishes</option>
+                        <option value="4.5">washing windows</option>
+                        <option value="4">water aerobics </option>
+                        <option value="10">water polo</option>
+                        <option value="6">water skiing</option>
+                        <option value="3">weight lifting</option>
+                        <option value="5">whitewater rafting </option>
+                        <option value="4">yoga hatha</option>
+                    </select></div>
+                <div class="form-group"> <label>How long are you going to do this?</label> <input type="text"
+                        id="minutes" placeholder="0" class="form-control"> <span>minutes</span></div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group"> <label>What's your weight?</label> <input type="text" id="pounds"
+                        placeholder="0" class="form-control"> <span>pounds</span></div>
+                <div class="form-group"> <span id="caloriesburned"></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center"> <input type="button" class="btn btn-md" id="btnCompute" value="Compute Calories"></div>
+</form>
+
+ <script type="text/javascript" src="/js/manburntlogic.js"></script>

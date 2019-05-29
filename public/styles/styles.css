@@ -318,7 +318,8 @@ li {
   font-family: 'Exo', sans-serif;
 }
 
-button {
+.btn {
+ 
   margin: 0 auto;
   height: 50%;
   width: 50%;
@@ -336,14 +337,11 @@ button {
 
 }
 
-#button1 {
+#button1, #button2, #button3, #button4 {
   color: white !important;
+  margin-top: 20px;
+}
 
-}
-#button2 {
-  color: white !important;
-  
-}
 
 #goal, #goal-unit, .goal {
   color: gold;
