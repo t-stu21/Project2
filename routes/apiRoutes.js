@@ -1,24 +1,62 @@
 var db = require("../models");
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
-      res.json(dbExamples);
+module.exports = function (app) {
+  // Get all
+  app.get("/api/fitness", function (req, res) {
+    db.Fitness.findAll({}).then(function (results) {
+      res.json(results);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
     });
   });
 
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  //Add exercise
+
+  app.post("/api/exercise", function (req, res) {
+    db.Fitness.create({
+      cal_burned: req.body.cal_burned,
+    }).then(function (dbBurned) {
+      res.json(dbBurned);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-      res.json(dbExample);
+  //Add Food
+
+  app.post("/api/food", function (req, res) {
+    db.Fitness.create({
+      cal_intake: req.body.cal_intake,
+    }).then(function (dbIntake) {
+      res.json(dbIntake);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
+    });
+  });
+
+  //Update
+
+  app.put("/api/fitness", function (req, res) {
+    console.log(req.body);
+    db.Fitness.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function (dbUpdate) {
+      res.json(dbUpdate);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
+    });
+  });
+
+  // Delete
+  app.delete("/api/fitness/:id", function (req, res) {
+    db.Fitness.destroy({
+      where: { id: req.params.id }
+    }).then(function (dbDelete) {
+      res.json(dbDelete);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
     });
   });
 };
