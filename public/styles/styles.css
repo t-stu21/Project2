@@ -317,3 +317,29 @@ li {
   font-family: 'Exo', sans-serif;
 }
 
+button {
+  margin: 0 auto;
+  height: 50%;
+  width: 50%;
+  float: left;
+  font-family: 'Exo', sans-serif;
+  font-size: 75px;
+  background-color: #1e2125 !important;
+  
+}
+
+.buttons {
+  text-align: center;
+  height: 30%;
+  width: 100%;
+
+}
+
+#button1 {
+  color: white !important;
+
+}
+#button2 {
+  color: white !important;
+  
+}
