@@ -11,7 +11,10 @@ module.exports = {
       cal_goals: {
         type: Sequelize.INTEGER
       },
-      cal_burned: {
+      cal_autoburnt: {
+        type: Sequelize.INTEGER
+      },
+      cal_manburnt: {
         type: Sequelize.INTEGER
       },
       cal_intake: {
