@@ -1,32 +1,36 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
 
-// Dependencies
-// =============================================================
-var path = require('path');
+var db = require("../models");
 
-// Routes
-// =============================================================
-module.exports = function(app) {
-  // Each of the below routes just handles the HTML page that the user gets sent to.
+module.exports = function (app) {
+  // Load index page
+  app.get("/", function (req, res) {
+    res.render("index");
+   
+    });
+  
 
-  // index route loads view.html
-  app.get('/', function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/blog.html"));
-    res.render('index');
-  });
-  app.get('/calcCal', function(req, res) {
-    res.render('calcCal');
-  });
+  // Load example page and pass in an example by id
+  app.get("/calcCal", function (req, res) {
+    res.render("calcCal");
+   
+    });
+  
 
-  app.get('/graph', function(req, res) {
-    res.render('graph');
-  });
+    app.get("/graph", function (req, res) {
+      res.render("graph");
+     
+      });
 
-  app.get('/manburnt', function(req, res) {
-    res.render('manburnt');
-  });
+      app.get("/manburnt", function (req, res) {
+        res.render("manburnt");
+       
+        });
+      
+    
+        app.get("/dietary", function (req, res) {
+          res.render("dietary");
+         
+          });  
 
   // Render 404 page for any unmatched routes
   app.get('*', function(req, res) {
