@@ -10,32 +10,6 @@ module.exports = function (app) {
     });
   });
 
-  //Add exercise
-
-  app.post("/api/exercise", function (req, res) {
-    db.Fitness.create({
-      cal_burned: req.body.cal_burned,
-    }).then(function (dbBurned) {
-      res.json(dbBurned);
-    }).catch().then(function (err) {
-      res.status(500).send(err);
-    });
-  });
-
-  //Add Food
-
-  app.post("/api/food", function (req, res) {
-    db.Fitness.create({
-      cal_intake: req.body.cal_intake,
-    }).then(function (dbIntake) {
-      res.json(dbIntake);
-    }).catch().then(function (err) {
-      res.status(500).send(err);
-    });
-  });
-
-  //Update
-
   app.put("/api/fitness", function (req, res) {
     console.log(req.body);
     db.Fitness.update(req.body, {
@@ -59,4 +33,31 @@ module.exports = function (app) {
       res.status(500).send(err);
     });
   });
+
+  //Add exercise
+
+  app.post("/api/fitness/exercise", function (req, res) {
+    db.Fitness.create({
+      cal_burned: req.body.cal_burned,
+    }).then(function (dbBurned) {
+      res.json(dbBurned);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
+    });
+  });
+
+  //Add Food
+
+  app.post("/api/fitness/food", function (req, res) {
+    db.Fitness.create({
+      cal_intake: req.body.cal_intake,
+    }).then(function (dbIntake) {
+      res.json(dbIntake);
+    }).catch().then(function (err) {
+      res.status(500).send(err);
+    });
+  });
+
+  //Update
+
 };
