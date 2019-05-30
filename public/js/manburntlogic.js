@@ -415,7 +415,7 @@ function checkNumber(input, min, max, msg) {
   var str = input;
   for (var i = 0; i < str.length; i++) {
     var ch = str.substring(i, i + 1);
-    if ((ch < "0" || "9" < ch) && ch != ".") {
+    if ((ch < "0" || ch > "9") && ch != ".") {
       return false;
     }
   }

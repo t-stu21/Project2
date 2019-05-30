@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     user_height: DataTypes.INTEGER,
     user_weight: DataTypes.INTEGER,
     user_age: DataTypes.INTEGER
-   }, {});
+  });
   Fitness.associate = function(models) {
     // associations can be defined here
   };
