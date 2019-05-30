@@ -1,3 +1,4 @@
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   let User = sequelize.define('User', {
     // Giving the User model a name of type STRING
