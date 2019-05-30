@@ -26,7 +26,10 @@ module.exports = function (app) {
         });
       
     
-
+        app.get("/dietary", function (req, res) {
+          res.render("dietary");
+         
+          });  
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
     res.render("404");
