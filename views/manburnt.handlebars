@@ -2,8 +2,8 @@
     <div class="calc-wrapper">
         <div class="row">
             <div class="col-md-6">
-                <div class="form-group"> <label>Choose an activity</label> <select id="selectActivity"
-                        class="form-control">
+                <div class="form-group excercise"> <label>Choose an activity</label> <select id="selectActivity"
+                        class="form-control" id="exer-pick">
                         <option value="6">aerobics</option>
                         <option value="7">backpacking</option>
                         <option value="4.5">badminton (singles)</option>
@@ -103,17 +103,18 @@
                         <option value="5">whitewater rafting </option>
                         <option value="4">yoga hatha</option>
                     </select></div>
-                <div class="form-group"> <label>How long are you going to do this?</label> <input type="text"
+                <div class="form-group exercise"> <label>How long are you going to do this?</label> <input type="text"
                         id="minutes" placeholder="0" class="form-control"> <span>minutes</span></div>
             </div>
             <div class="col-md-6">
-                <div class="form-group"> <label>What's your weight?</label> <input type="text" id="pounds"
-                        placeholder="0" class="form-control"> <span>pounds</span></div>
+                <div class="form-group exercise"> <label>What's your weight?</label> <input type="text" id="pounds"
+                        placeholder="0" class="form-control"> <span class="exercise">pounds</span></div>
                 <div class="form-group"> <span id="caloriesburned"></span></div>
+                 <div class="text-center"> <input type="button" class="btn btn-md exercise" id="btnCompute" value="Compute Calories"></div>
             </div>
         </div>
     </div>
-    <div class="text-center"> <input type="button" class="btn btn-md" id="btnCompute" value="Compute Calories"></div>
+   
 </form>
 
  <script type="text/javascript" src="/js/manburntlogic.js"></script>
