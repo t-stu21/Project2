@@ -28,6 +28,7 @@ require('./routes/htmlRoutes')(app);
 app.get('*', function(req, res) {
   res.render('404');
 });
+
 var syncOptions = { force: false };
 
 // If running a test, set syncOptions.force to true
