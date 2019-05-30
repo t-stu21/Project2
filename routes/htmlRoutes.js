@@ -1,34 +1,50 @@
-var db = require("../models");
+// *********************************************************************************
+// html-routes.js - this file offers a set of routes for sending users to the various html pages
+// *********************************************************************************
 
-module.exports = function (app) {
-  // Load index page
-  app.get("/", function (req, res) {
-    res.render("index");
-   
-    });
-  
+// Dependencies
+// =============================================================
+var path = require('path');
 
-  // Load example page and pass in an example by id
-  app.get("/calcCal", function (req, res) {
-    res.render("calcCal");
-   
-    });
-  
+// Routes
+// =============================================================
+module.exports = function(app) {
+  // Each of the below routes just handles the HTML page that the user gets sent to.
 
-    app.get("/graph", function (req, res) {
-      res.render("graph");
-     
-      });
+  // index route loads view.html
+  app.get('/', function(req, res) {
+    // res.sendFile(path.join(__dirname, "../public/blog.html"));
+    res.render('index');
+  });
+  app.get('/calcCal', function(req, res) {
+    res.render('calcCal');
+  });
 
-      app.get("/manburnt", function (req, res) {
-        res.render("manburnt");
-       
-        });
-      
-    
+  app.get('/graph', function(req, res) {
+    res.render('graph');
+  });
+
+  app.get('/manburnt', function(req, res) {
+    res.render('manburnt');
+  });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
+  app.get('*', function(req, res) {
+    res.render('404');
   });
+
+  // cms route loads cms.html
+  // app.get('/cms', function(req, res) {
+  //   res.sendFile(path.join(__dirname, '../public/cms.html'));
+  // });
+
+  // // blog route loads blog.html
+  // app.get('/blog', function(req, res) {
+  //   res.sendFile(path.join(__dirname, '../public/blog.html'));
+  // });
+
+  // // authors route loads author-manager.html
+  // app.get('/authors', function(req, res) {
+  //   res.sendFile(path.join(__dirname, '../public/author-manager.html'));
+  // });
 };
