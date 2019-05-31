@@ -2,7 +2,6 @@ var db = require('../models');
 
 module.exports = function(app) {
   app.get('/api/users', function(req, res) {
-    // 1. Add a join to include all of each User's Posts
     db.User.findAll({
       include: [
         db.Post
@@ -18,7 +17,6 @@ module.exports = function(app) {
   });
 
   app.get('/api/users/:id', function(req, res) {
-    // 2; Add a join to include all of the User's Posts here
     db.User.findOne({
       where: {
         id: req.params.id
