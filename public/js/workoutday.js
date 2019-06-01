@@ -1,16 +1,16 @@
 $(document).ready(function() {
   /* global moment */
 
-  // workoutdayContainer holds all of our posts
+  // workoutdayContainer holds all of our workoutdays
   var workoutdayContainer = $('.workoutday-container');
-  var postCategorySelect = $('#category');
+  var workoutdayCategorySelect = $('#category');
   // Click events for the edit and delete buttons
   $(document).on('click', 'button.delete', handleWorkoutDayDelete);
   $(document).on('click', 'button.edit', handleWorkoutDayEdit);
-  // Variable to hold our posts
-  var posts;
+  // Variable to hold our workoutdays
+  var workoutdays;
 
-  // The code below handles the case where we want to get workoutday posts for a specific user
+  // The code below handles the case where we want to get workoutday workoutdays for a specific user
   // Looks for a query param in the url for user_id
   var url = window.location.search;
   var userId;
@@ -18,21 +18,21 @@ $(document).ready(function() {
     userId = url.split('=')[1];
     getWorkoutDays(userId);
   }
-  // If there's no userId we just get all posts as usual
+  // If there's no userId we just get all workoutdays as usual
   else {
     getWorkoutDays();
   }
 
-  // This function grabs posts from the database and updates the view
+  // This function grabs workoutdays from the database and updates the view
   function getWorkoutDays(user) {
     userId = user || '';
     if (userId) {
       userId = '/?user_id=' + userId;
     }
-    $.get('/api/posts' + userId, function(data) {
+    $.get('/api/workoutdays' + userId, function(data) {
       console.log('WorkoutDays', data);
-      posts = data;
-      if (!posts || !posts.length) {
+      workoutdays = data;
+      if (!workoutdays || !workoutdays.length) {
         displayEmpty(user);
       } else {
         initializeRows();
@@ -40,29 +40,29 @@ $(document).ready(function() {
     });
   }
 
-  // This function does an API call to delete posts
+  // This function does an API call to delete workoutdays
   function deleteWorkoutDay(id) {
     $.ajax({
       method: 'DELETE',
-      url: '/api/posts/' + id
+      url: '/api/workoutdays/' + id
     }).then(function() {
-      getWorkoutDays(postCategorySelect.val());
+      getWorkoutDays(workoutdayCategorySelect.val());
     });
   }
 
-  // InitializeRows handles appending all of our constructed post HTML inside workoutdayContainer
+  // InitializeRows handles appending all of our constructed workoutday HTML inside workoutdayContainer
   function initializeRows() {
     workoutdayContainer.empty();
-    var postsToAdd = [];
-    for (var i = 0; i < posts.length; i++) {
-      postsToAdd.push(createNewRow(posts[i]));
+    var workoutdaysToAdd = [];
+    for (var i = 0; i < workoutdays.length; i++) {
+      workoutdaysToAdd.push(createNewRow(workoutdays[i]));
     }
-    workoutdayContainer.append(postsToAdd);
+    workoutdayContainer.append(workoutdaysToAdd);
   }
 
-  // This function constructs a post's HTML
-  function createNewRow(post) {
-    var formattedDate = new Date(post.createdAt);
+  // This function constructs a workoutday's HTML
+  function createNewRow(workoutday) {
+    var formattedDate = new Date(workoutday.createdAt);
     formattedDate = moment(formattedDate).format('MMMM Do YYYY, h:mm:ss a');
     var newWorkoutDayCard = $('<div>');
     newWorkoutDayCard.addClass('card');
@@ -76,9 +76,9 @@ $(document).ready(function() {
     editBtn.addClass('edit btn btn-info');
     var newWorkoutDayTitle = $('<h2>');
     var newWorkoutDayDate = $('<small>');
-    var newWorkoutDayAuthor = $('<h5>');
-    newWorkoutDayAuthor.text('Written by: ' + post.Author.name);
-    newWorkoutDayAuthor.css({
+    var newWorkoutDayUser = $('<h5>');
+    newWorkoutDayUser.text('Written by: ' + workoutday.User.name);
+    newWorkoutDayUser.css({
       float: 'right',
       color: 'blue',
       'margin-top': '-10px'
@@ -86,50 +86,50 @@ $(document).ready(function() {
     var newWorkoutDayCardBody = $('<div>');
     newWorkoutDayCardBody.addClass('card-body');
     var newWorkoutDayBody = $('<p>');
-    newWorkoutDayTitle.text(post.title + ' ');
-    newWorkoutDayBody.text(post.body);
+    newWorkoutDayTitle.text(workoutday.title + ' ');
+    newWorkoutDayBody.text(workoutday.body);
     newWorkoutDayDate.text(formattedDate);
     newWorkoutDayTitle.append(newWorkoutDayDate);
     newWorkoutDayCardHeading.append(deleteBtn);
     newWorkoutDayCardHeading.append(editBtn);
     newWorkoutDayCardHeading.append(newWorkoutDayTitle);
-    newWorkoutDayCardHeading.append(newWorkoutDayAuthor);
+    newWorkoutDayCardHeading.append(newWorkoutDayUser);
     newWorkoutDayCardBody.append(newWorkoutDayBody);
     newWorkoutDayCard.append(newWorkoutDayCardHeading);
     newWorkoutDayCard.append(newWorkoutDayCardBody);
-    newWorkoutDayCard.data('post', post);
+    newWorkoutDayCard.data('workoutday', workoutday);
     return newWorkoutDayCard;
   }
 
-  // This function figures out which post we want to delete and then calls deleteWorkoutDay
+  // This function figures out which workoutday we want to delete and then calls deleteWorkoutDay
   function handleWorkoutDayDelete() {
     var currentWorkoutDay = $(this)
       .parent()
       .parent()
-      .data('post');
+      .data('workoutday');
     deleteWorkoutDay(currentWorkoutDay.id);
   }
 
-  // This function figures out which post we want to edit and takes it to the appropriate url
+  // This function figures out which workoutday we want to edit and takes it to the appropriate url
   function handleWorkoutDayEdit() {
     var currentWorkoutDay = $(this)
       .parent()
       .parent()
-      .data('post');
-    window.location.href = '/addworkout?post_id=' + currentWorkoutDay.id;
+      .data('workoutday');
+    window.location.href = '/addworkout?workoutday_id=' + currentWorkoutDay.id;
   }
 
-  // This function displays a message when there are no posts
+  // This function displays a message when there are no workoutdays
   function displayEmpty(id) {
     var query = window.location.search;
     var partial = '';
     if (id) {
-      partial = ' for Author #' + id;
+      partial = ' for User #' + id;
     }
     workoutdayContainer.empty();
     var messageH2 = $('<h2>');
     messageH2.css({ 'text-align': 'center', 'margin-top': '50px' });
-    messageH2.html('No posts yet' + partial + ", navigate <a href='/addworkout" + query + "'>here</a> in order to get started.");
+    messageH2.html('No workoutdays yet' + partial + ", navigate <a href='/addworkout" + query + "'>here</a> in order to get started.");
     workoutdayContainer.append(messageH2);
   }
 });

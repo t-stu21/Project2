@@ -1,36 +1,36 @@
 $(document).ready(function() {
-  // Getting jQuery references to the post body, title, form, and user select
+  // Getting jQuery references to the workoutday body, title, form, and user select
   var bodyInput = $('#body');
   var titleInput = $('#title');
   var addworkoutForm = $('#addworkout');
   var userSelect = $('#user');
   // Adding an event listener for when the form is submitted
   $(addworkoutForm).on('submit', handleFormSubmit);
-  // Gets the part of the url that comes after the "?" (which we have if we're updating a post)
+  // Gets the part of the url that comes after the "?" (which we have if we're updating a workoutday)
   var url = window.location.search;
-  var postId;
+  var workoutdayId;
   var userId;
-  // Sets a flag for whether or not we're updating a post to be false initially
+  // Sets a flag for whether or not we're updating a workoutday to be false initially
   var updating = false;
 
-  // If we have this section in our url, we pull out the post id from the url
-  // In '?post_id=1', postId is 1
-  if (url.indexOf('?post_id=') !== -1) {
-    postId = url.split('=')[1];
-    getWorkoutDayData(postId, 'post');
+  // If we have this section in our url, we pull out the workoutday id from the url
+  // In '?workoutday_id=1', workoutdayId is 1
+  if (url.indexOf('?workoutday_id=') !== -1) {
+    workoutdayId = url.split('=')[1];
+    getWorkoutDayData(workoutdayId, 'workoutday');
   }
   // Otherwise if we have an user_id in our url, preset the user select box to be our User
   else if (url.indexOf('?user_id=') !== -1) {
     userId = url.split('=')[1];
   }
 
-  // Getting the users, and their posts
+  // Getting the users, and their workoutdays
   getUsers();
 
-  // A function for handling what happens when the form to create a new post is submitted
+  // A function for handling what happens when the form to create a new workoutday is submitted
   function handleFormSubmit(event) {
     event.preventDefault();
-    // Wont submit the post if we are missing a body, title, or user
+    // Wont submit the workoutday if we are missing a body, title, or user
     if (!titleInput.val().trim() || !bodyInput.val().trim() || !userSelect.val()) {
       return;
     }
@@ -41,29 +41,29 @@ $(document).ready(function() {
       UserId: userSelect.val()
     };
 
-    // If we're updating a post run updateWorkoutDay to update a post
-    // Otherwise run submitWorkoutDay to create a whole new post
+    // If we're updating a workoutday run updateWorkoutDay to update a workoutday
+    // Otherwise run submitWorkoutDay to create a whole new workoutday
     if (updating) {
-      newWorkoutDay.id = postId;
+      newWorkoutDay.id = workoutdayId;
       updateWorkoutDay(newWorkoutDay);
     } else {
       submitWorkoutDay(newWorkoutDay);
     }
   }
 
-  // Submits a new post and brings user to workoutday page upon completion
-  function submitWorkoutDay(post) {
-    $.post('/api/posts', post, function() {
+  // Submits a new workoutday and brings user to workoutday page upon completion
+  function submitWorkoutDay(workoutday) {
+    $.workoutday('/api/workoutdays', workoutday, function() {
       window.location.href = '/workoutday';
     });
   }
 
-  // Gets post data for the current post if we're editing, or if we're adding to an user's existing posts
+  // Gets workoutday data for the current workoutday if we're editing, or if we're adding to an user's existing workoutdays
   function getWorkoutDayData(id, type) {
     var queryUrl;
     switch (type) {
-      case 'post':
-        queryUrl = '/api/posts/' + id;
+      case 'workoutday':
+        queryUrl = '/api/workoutdays/' + id;
         break;
       case 'user':
         queryUrl = '/api/users/' + id;
@@ -74,11 +74,11 @@ $(document).ready(function() {
     $.get(queryUrl, function(data) {
       if (data) {
         console.log(data.UserId || data.id);
-        // If this post exists, prefill our addworkout forms with its data
+        // If this workoutday exists, prefill our addworkout forms with its data
         titleInput.val(data.title);
         bodyInput.val(data.body);
         userId = data.UserId || data.id;
-        // If we have a post with this id, set a flag for us to know to update the post
+        // If we have a workoutday with this id, set a flag for us to know to update the workoutday
         // when we hit submit
         updating = true;
       }
@@ -115,12 +115,12 @@ $(document).ready(function() {
     return listOption;
   }
 
-  // Update a given post, bring user to the workoutday page when done
-  function updateWorkoutDay(post) {
+  // Update a given workoutday, bring user to the workoutday page when done
+  function updateWorkoutDay(workoutday) {
     $.ajax({
       method: 'PUT',
-      url: '/api/posts',
-      data: post
+      url: '/api/workoutdays',
+      data: workoutday
     }).then(function() {
       window.location.href = '/workoutday';
     });
