@@ -30,7 +30,7 @@ app.get('*', function (req, res) {
   res.render('404');
 });
 
-var syncOptions = { force: false };
+var syncOptions = { force: true };
 
 // If running a test, set syncOptions.force to true
 // clearing the `testdb`
