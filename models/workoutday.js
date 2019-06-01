@@ -13,8 +13,10 @@ module.exports = (sequelize, DataTypes) => {
       // allowNull: false
       // len: [1]
     },
-    date: DataTypes.INTEGER
-    // allowNull: false
+    date: {
+      type: DataTypes.DATEONLY,
+      allowNull: false
+    }
   });
 
   WorkoutDay.associate = models => {

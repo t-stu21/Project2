@@ -22,7 +22,8 @@ app.engine(
 app.set('view engine', 'handlebars');
 
 // Routes
-require('./routes/apiRoutes')(app);
+require('./routes/user-api-routes')(app);
+require('./routes/workoutday-api-routes')(app);
 require('./routes/htmlRoutes')(app);
 // Render 404 page for any unmatched routes
 app.get('*', function(req, res) {

@@ -39,7 +39,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new workoutday
-  app.workoutday('/api/workoutdays', function(req, res) {
+  app.post('/api/workoutdays', function(req, res) {
     db.WorkoutDay.create(req.body).then(function(dbWorkoutDay) {
       res.json(dbWorkoutDay);
     });
