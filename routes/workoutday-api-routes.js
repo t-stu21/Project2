@@ -14,10 +14,10 @@ module.exports = function(app) {
   // GET route for getting all of the workoutdays
   app.get('/api/workoutdays', function(req, res) {
     var query = {};
-    if (req.query.author_id) {
-      query.AuthorId = req.query.author_id;
+    if (req.query.User_id) {
+      query.UserId = req.query.User_id;
     }
-    // 1. Add a join here to include all of the Authors to these workoutdays
+    // 1. Add a join here to include all of the Users to these workoutdays
     db.WorkoutDay.findAll({
       where: query
     }).then(function(dbWorkoutDay) {
@@ -27,7 +27,7 @@ module.exports = function(app) {
 
   // Get route for retrieving a single workoutday
   app.get('/api/workoutdays/:id', function(req, res) {
-    // 2. Add a join here to include the Author who wrote the WorkoutDay
+    // 2. Add a join here to include the User who wrote the WorkoutDay
     db.WorkoutDay.findOne({
       where: {
         id: req.params.id
