@@ -25,18 +25,18 @@ module.exports = function (app) {
     res.render('dietary');
   });
 
-  // cms route loads cms.html
-  app.get('/cms', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/cms.html'));
+  // addworkout route loads addworkout.html
+  app.get('/addworkout', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/addworkout.html'));
   });
 
-  // blog route loads blog.html
-  app.get('/blog', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/blog.html'));
+  // workoutday route loads workoutday.html
+  app.get('/workoutday', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/workoutday.html'));
   });
 
-  // authors route loads author-manager.html
-  app.get('/authors', function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/author-manager.html'));
+  // users route loads user-manager.html
+  app.get('/users', function (req, res) {
+    res.sendFile(path.join(__dirname, '../public/user-manager.html'));
   });
 };

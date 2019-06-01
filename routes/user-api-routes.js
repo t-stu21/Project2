@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.get('/api/users', function (req, res) {
     db.User.findAll({
       include: [
-        db.User
+        db.WorkoutDay
         // include: [
         //   {
         //     model: db.comments
