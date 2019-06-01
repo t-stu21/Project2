@@ -22,10 +22,11 @@ app.engine(
 app.set('view engine', 'handlebars');
 
 // Routes
-require('./routes/apiRoutes')(app);
+require('./routes/user-api-routes')(app);
+require('./routes/workoutday-api-routes')(app);
 require('./routes/htmlRoutes')(app);
 // Render 404 page for any unmatched routes
-app.get('*', function(req, res) {
+app.get('*', function (req, res) {
   res.render('404');
 });
 
@@ -38,8 +39,8 @@ if (process.env.NODE_ENV === 'test') {
 }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
-  app.listen(PORT, function() {
+db.sequelize.sync(syncOptions).then(function () {
+  app.listen(PORT, function () {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
   });
 });
