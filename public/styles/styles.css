@@ -2,7 +2,7 @@ html, body {
   margin: 0;
   min-height: 100%;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
 }
 
 body
@@ -383,4 +383,65 @@ li {
   color: gold;
 }
 
+input {
+  background-color: #1e2125;
+  color: skyblue;
+  
+}
 
+.in-text {
+  color: white;
+}
+
+.form-group {
+  float: left;
+}
+
+select {
+  background-color: #1e2125;
+  color: skyblue;
+}
+
+.btn-wrap {
+  margin: 10px 0 10px 0;
+  
+}
+
+.calc-text {
+  color: skyblue;
+  margin: 10px 0 10px 0;
+}
+
+#bmi {
+  font-size: 50px;
+  color: lime;
+}
+
+.form-submit {
+  background-color: #1e2125;
+  color: skyblue;
+  outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 6px #5f5f5e;
+    margin: 10px 0 10px 0;
+}
+
+.form-submit:hover {
+  box-shadow: 0 4px #5f5f5e;
+  top: 2px;
+}
+
+.form-submit:active {
+  box-shadow: 0 0 #5f5f5e;
+  top: 6px;
+}
+
+.calc-text {
+  margin-top: 10px;
+}

@@ -26,7 +26,7 @@
      * @param   {Integer}  calsPerHr  The calories burned per hour
      */
     function showResults(calories) {
-        results.innerHTML = `<p>Your basal metabolic rate (BMR) is: <strong>${(calories).toFixed(2)} </strong> calories a day.</p><a href="#" id="rs">revise</a>`;
+        results.innerHTML = `<p id='bmi'>Your basal metabolic rate (BMR) is: <strong>${(calories).toFixed(2)} </strong> calories a day.</p><a href="/" id="rs">revise</a>`;
       results.style.display = ''
       form.style.display = 'none'
       errors.style.display = 'none'
