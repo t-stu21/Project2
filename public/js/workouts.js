@@ -1,5 +1,5 @@
 //
-(function() {
+(function () {
   const form = document.getElementById('calc-form');
   const results = document.getElementById('results');
   const errors = document.getElementById('form-error');
