@@ -27,7 +27,7 @@ module.exports = function(app) {
 
   // addworkout route loads addworkout.html
   app.get('/addworkout', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/addworkout.html'));
+    res.sendFile(path.join(__dirname, '../public/addworkoutday.html'));
   });
 
   // workoutday route loads workoutday.html

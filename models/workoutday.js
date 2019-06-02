@@ -14,8 +14,14 @@ module.exports = (sequelize, DataTypes) => {
       // len: [1]
     },
     date: {
-      type: DataTypes.INTEGER,
-      allowNull: false
+      type: DataTypes.INTEGER
+      //allowNull: false
+    },
+    workout: {
+      type: DataTypes.STRING
+    },
+    duration: {
+      type: DataTypes.INTEGER
     }
   });
 

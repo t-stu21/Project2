@@ -77,7 +77,8 @@ $(document).ready(function() {
     var newWorkoutDayTitle = $('<h2>');
     var newWorkoutDayDate = $('<small>');
     var newWorkoutDayUser = $('<h5>');
-    newWorkoutDayUser.text('Written by: ' + workoutday.User.name);
+    // newWorkoutDayUser.text('Written by: ' + workoutday.User.name);
+    //newWorkoutDayUser.text('Written by: ' + workoutday.User.name);
     newWorkoutDayUser.css({
       float: 'right',
       color: 'blue',
@@ -86,13 +87,13 @@ $(document).ready(function() {
     var newWorkoutDayCardBody = $('<div>');
     newWorkoutDayCardBody.addClass('card-body');
     var newWorkoutDayBody = $('<p>');
-    newWorkoutDayTitle.text(workoutday.title + ' ');
+    //////newWorkoutDayTitle.text(workoutday.title + ' ');
     newWorkoutDayBody.text(workoutday.body);
     newWorkoutDayDate.text(formattedDate);
     newWorkoutDayTitle.append(newWorkoutDayDate);
     newWorkoutDayCardHeading.append(deleteBtn);
     newWorkoutDayCardHeading.append(editBtn);
-    newWorkoutDayCardHeading.append(newWorkoutDayTitle);
+    //////newWorkoutDayCardHeading.append(newWorkoutDayTitle);
     newWorkoutDayCardHeading.append(newWorkoutDayUser);
     newWorkoutDayCardBody.append(newWorkoutDayBody);
     newWorkoutDayCard.append(newWorkoutDayCardHeading);
