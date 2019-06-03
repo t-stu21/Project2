@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+
 html, body {
   margin: 0;
   min-height: 100%;
@@ -383,10 +385,21 @@ li {
   color: gold;
 }
 
-input {
+input, select {
   background-color: #1e2125;
   color: skyblue;
-  
+  outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    box-shadow: 0 6px #5f5f5e;
+}
+
+select {
+  margin-top: 10px;
 }
 
 .in-text {
@@ -397,10 +410,7 @@ input {
   float: left;
 }
 
-select {
-  background-color: #1e2125;
-  color: skyblue;
-}
+
 
 .btn-wrap {
   margin: 10px 0 10px 0;
@@ -430,6 +440,7 @@ select {
     border-radius: 20px;
     box-shadow: 0 6px #5f5f5e;
     margin: 10px 0 10px 0;
+    
 }
 
 .form-submit:hover {
@@ -444,4 +455,19 @@ select {
 
 .calc-text {
   margin-top: 10px;
+}
+
+
+.exercise {
+  background-color: #1e2125;
+  color: skyblue;
+  outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    box-shadow: 0 6px #5f5f5e;
+  
 }
