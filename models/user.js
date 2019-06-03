@@ -20,11 +20,14 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-
     age: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: { min: 18, max: 100 }
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     weight: {
       type: DataTypes.INTEGER,
@@ -39,6 +42,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: { min: 80, max: 600 }
+    },
+    daily_cals: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: { min: 1100, max: 5000 }
     }
   });
 
