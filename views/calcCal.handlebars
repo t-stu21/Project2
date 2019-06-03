@@ -1,39 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Exo:100&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://platform.fatsecret.com/js?key=36a7d2c80f0f4752bab68955b68b711f&theme=green"></script>
-    <script src="/js/dietary.js"></script>
-    <script type="text/javascript" src="/js/manburntlogic.js"></script>
-    <title>Home Page</title>
-</head>
-<body>
-  
-
-
-<div class="row text-center">
-<div class="container calc-outer-wrap">
-    <div class="calc-text"><h1 id="cal-head">Fill in your info so we can calculate you're BMI and calories you burn per day.</h1></div>
-
+<div class="calc-outer-wrap">
 <div id="form-error" style="display:none;"></div>
 <form class="calc-form" id="calc-form">
   <div class="form-fields">
 
-    <div class="field-outer text-center">
-      <label for="distance" class="top-label in-text">Age:</label>
+    <div class="field-outer">
+      <label for="distance" class="top-label">Age:</label>
       <div class="field-items">
         <div class="field field-large">         
-          <input type="text" name="age" id="age" inputmode="numeric" pattern="[0-9]*" class="form-control-lg">
+          <input type="text" name="age" id="age" inputmode="numeric" pattern="[0-9]*">
         </div><!--  /.field-large -->
         
-        <div class="field field-medium text-center">
+        <div class="field field-medium">
           <select name="gender">
             <option value="Female">Female</option>
             <option value="Male">Male</option>
@@ -44,31 +21,29 @@
       </div><!--  /.field-items -->
     </div><!--  /.field-outer -->
 
-
-    <div class="form-group">
-      <label for="height" class="top-label in-text">Height:</label>
+    <div class="field-outer">
+      <label for="height" class="top-label">Height:</label>
       <div class="field-items">
-        <div class="form-group">
-          <input type="text" name="height_ft" id="height-ft" inputmode="numeric" pattern="[0-9]*" class="form-control-lg">
-          <label for="height-ft" class="in-text">feet</label>
+        <div class="field">
+          <input type="text" name="height_ft" id="height-ft" inputmode="numeric" pattern="[0-9]*">
+          <label for="height-ft">feet</label>
         </div><!--  /.field -->
-        <div class="form-group">
-          <input type="text" name="height_in" id="height-in" inputmode="numeric" pattern="[0-9]*" class="form-control-lg">
-          <label for="height-in" class="in-text">inches</label>
+        <div class="field">
+          <input type="text" name="height_in" id="height-in" inputmode="numeric" pattern="[0-9]*">
+          <label for="height-in">inches</label>
         </div><!--  /.field -->
-       <div class="form-group">
-          <input type="text" name="height_cm" id="height-cm" inputmode="numeric" pattern="[0-9]*" class="form-control-lg">
-          <label for="height-cm" class="in-text">or centimeters</label>
+       <div class="field">
+          <input type="text" name="height_cm" id="height-cm" inputmode="numeric" pattern="[0-9]*">
+          <label for="height-cm">or centimeters</label>
         </div><!--  /.field -->        
       </div><!--  /.field-items -->
     </div><!--  /.field-outer -->
-    
 
     <div class="field-outer">
       <label for="weight" class="top-label">Your weight:</label>
       <div class="field-items">
         <div class="field field-large">
-          <input type="text" name="weight" id="weight" inputmode="numeric" pattern="[0-9]*" class="form-control-lg">
+          <input type="text" name="weight" id="weight" inputmode="numeric" pattern="[0-9]*">
         </div><!--  /.field-large -->
         <div class="field field-small">
           <select name="weight_unit">
@@ -78,19 +53,16 @@
         </div><!--  /.field-small -->
       </div><!--  /.field-items -->
     </div><!--  /.field-outer -->
-   <div class="btn-wrap field-outer text-center">
+   <div class="btn-wrap field-outer">
     <button class="form-submit">Calculate</button>
   </div>
   </div><!--  /.form fields -->
 
 
 </form>
-<div id="results" class="in-text" style="display:none;"></div>
+<div id="results" style="display:none;"></div>
 </div><!--  /.calc-outer-wrap -->
-</div>
+
 
 
 <script type="text/javascript" src="/js/workouts.js"></script>
-
-</body>
-</html>
