@@ -1,3 +1,50 @@
-  
+<div id="schedule-template" type="text/x-handlebars-template">
+
+    <div class="row">
+        <div class="container-fluid">
+            <div class="app">
+                <div class="header">
+                    <div class="fat-burning">
+                        <span class="title">
+                            Todays Result
+                        </span>
+                        <span class="result">
+                            <span class="num">0000{{example.id}}</span>
+                            <span class="unit">
+                                Kcal
+                            </span>
+                        </span>
+                    </div>
+                    <a href="/"><img src="https://via.placeholder.com/140x100" class="user-img" alt="" /></a>
+                    <div class="user-attendance">
+                        <span class="title text-center goal">
+                            Daily Goal
+                        </span>
+                        <span class="result">
+                            <span class="num" id="goal">0000{{example.id}}</span>
+                            <span class="unit" id="goal-unit">
+                                Kcal
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="app-title">
+                    <div class="title-text text-center">Alyve</div>
+                </div>
+                <div class="body">
+                    <div class="attendance" id="goal">
+                        {{#each schedule.days}}
+                        <ul>
+                            <li>{{name}}
+                                <span class="lyve">{{status}}</span>
+                                <span class="date">{{number}}</span>
+                                <span class="circle present"></span>
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </div>
+                </div>
 
 
+            </div>
+            {{> footer }}

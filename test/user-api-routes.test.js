@@ -28,7 +28,7 @@ describe("POST /api/examples", function() {
 
     // POST the request body to the server
     request
-      .post("/api/fitness")
+      .post("/api/users")
       .send(testFitness)
       .end(function(err, res) {
         var responseStatus = res.status;

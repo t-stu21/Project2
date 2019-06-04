@@ -8,7 +8,6 @@
   "rules": {
     "for-direction": "warn",
     "getter-return": "error",
-    "no-async-promise-executor": "error",
     "no-await-in-loop": "error",
     "no-compare-neg-zero": "warn",
     "no-cond-assign": "warn",
@@ -158,10 +157,8 @@
     "implicit-arrow-linebreak": "off",
     "indent": ["warn", 4, { "SwitchCase": 1 }],
     "jsx-quotes": "warn",
-    "key-spacing": "warn",
     "keyword-spacing": "warn",
     "line-comment-position": "off",
-    "linebreak-style": "error",
     "lines-around-comment": "off",
     "lines-between-class-members": "off",
     "multiline-ternary": "off",
