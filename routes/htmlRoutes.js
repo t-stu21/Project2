@@ -41,6 +41,6 @@ module.exports = function(app) {
   });
 
   app.get('/signup', function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/new-user.html'));
+    res.sendFile(path.join(__dirname, '../public/adduser.html'));
   });
 };

@@ -69,12 +69,8 @@ $(document).ready(function() {
 
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
-    $.post('/api/users', userData).then(function(json) {
+    $.post('/api/users', userData).then(() => {
       window.location.href = '/users';
     });
   }
 });
-
-// function redirect() {
-//   console.log('success adding');
-// }
