@@ -88,10 +88,6 @@ $(document).ready(function () {
 
 
 
-
-
-
-
     console.log('userData: ', userData);
     addUser(userData);
   }
