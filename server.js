@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var express = require('express');
 var app = express();
 var passport = require('passport');
@@ -9,13 +8,6 @@ var exphbs = require('express-handlebars');
 
 var db = require('./models');
 
-=======
-require('dotenv').config();
-var express = require('express');
-var exphbs = require('express-handlebars');
-
-var db = require('./models');
->>>>>>> a3bc10b0c45d2d180ae3035cf16de0b43714fa34
 
 var PORT = process.env.PORT || 3000;
 
@@ -68,14 +60,11 @@ if (process.env.NODE_ENV === 'test') {
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
-<<<<<<< HEAD
   });
 
   // Passport
   app.get('/', function (req, res) {
     res.send('Welcome to Passport with Sequelize');
-=======
->>>>>>> a3bc10b0c45d2d180ae3035cf16de0b43714fa34
   });
 });
 
