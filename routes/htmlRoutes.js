@@ -48,6 +48,9 @@ module.exports = function(app) {
 
   app.get('/signup', function(req, res) {
     res.render('signup');
-    // res.sendFile(path.join(__dirname, '../public/adduser.html'));
+    //res.sendFile(path.join(__dirname, '../public/adduser.html'));
+  });
+  app.get('/login', function(req, res) {
+    res.render('login');
   });
 };

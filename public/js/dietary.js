@@ -1,8 +1,2 @@
-fatsecret.setContainer("my_container");
-fatsecret.setCanvas("home");
- 
-
-
-
-
-
+// fatsecret.setContainer("my_container");
+// fatsecret.setCanvas("home");

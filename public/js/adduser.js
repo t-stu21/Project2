@@ -12,7 +12,7 @@ $(document).ready(function() {
 
   // Adding event listeners to the form to create a new object, and the button to delete
   // an User
-  $(document).on('submit', '#user-form', handleUserFormSubmit);
+  $(document).on('submit', '#adduser-form', handleUserFormSubmit);
 
   // A function to handle what happens when the form is submitted to create a new User
   function handleUserFormSubmit(event) {
