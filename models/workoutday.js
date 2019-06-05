@@ -1,3 +1,4 @@
+'use strict';
 module.exports = (sequelize, DataTypes) => {
   var WorkoutDay = sequelize.define('WorkoutDay', {
     caloriesin: {
@@ -12,8 +13,16 @@ module.exports = (sequelize, DataTypes) => {
       // allowNull: false
       // len: [1]
     },
-    date: DataTypes.INTEGER
-    // allowNull: false
+    date: {
+      type: DataTypes.INTEGER
+      //allowNull: false
+    },
+    workout: {
+      type: DataTypes.STRING
+    },
+    duration: {
+      type: DataTypes.INTEGER
+    }
   });
 
   WorkoutDay.associate = models => {

@@ -1,11 +1,28 @@
-require('dotenv').config();
 var express = require('express');
+var app = express();
+var passport = require('passport');
+var session = require('express-session');
+var bodyParser = require('body-parser');
+var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
 
 var db = require('./models');
 
-var app = express();
+
 var PORT = process.env.PORT || 3000;
+
+//For BodyParser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//For Passport
+//session secret
+app.use(session({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+//persistant login sessions
+app.use(passport.session());
+
+
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -38,10 +55,16 @@ if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
 
+
 // Starting the server, syncing our models ------------------------------------/
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
+  });
+
+  // Passport
+  app.get('/', function (req, res) {
+    res.send('Welcome to Passport with Sequelize');
   });
 });
 
