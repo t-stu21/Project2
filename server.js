@@ -5,6 +5,7 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var env = require('dotenv').load();
 var exphbs = require('express-handlebars');
+var user = require('./models/user.js');
 
 var db = require('./models');
 
@@ -67,5 +68,6 @@ db.sequelize.sync(syncOptions).then(function () {
     res.send('Welcome to Passport with Sequelize');
   });
 });
+
 
 module.exports = app;

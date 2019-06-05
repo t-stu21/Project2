@@ -23,10 +23,6 @@ module.exports = function (app) {
     res.render("manburnt", { schedule });
   });
 
-  app.get("/dietary", function (req, res) {
-    res.render("dietary", { schedule });
-  });
-
   app.get("/userinfo", function (req, res) {
     res.render("userinfo");
   });
@@ -50,6 +46,6 @@ module.exports = function (app) {
   });
 
   app.get("/signup", function (req, res) {
-    res.sendFile(path.join(__dirname, "../public/new-user.html"));
+    res.render("signup", { schedule });
   });
 };
