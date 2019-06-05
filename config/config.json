@@ -8,7 +8,7 @@
   },
   "test": {
     "username": "root",
-    "password": "GrootRoot127",
+    "password": "passpass",
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql",
