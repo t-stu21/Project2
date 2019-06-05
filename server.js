@@ -31,7 +31,7 @@ app.use(express.static('public'));
 
 
 // Handlebars
-app.set('views', './app/views')
+app.set('views', './views')
 app.engine('hbs', exphbs({
   extname: '.hbs'
 }));
