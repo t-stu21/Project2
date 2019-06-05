@@ -44,16 +44,24 @@
                         {{/each}}
                     </div>
                 </div>
-                <div>
-                    <div class="card">
-                        <h1>Results:</h1>
-                        <p class="goalsmet">10</p>
-                    </div>
-                    <div class="card">
-                        <h1>Alyve Score:</h1>
-                        <p class="goalsmet">25896</p>
-                    </div>
 
+                <div class="container workoutday">
+                    <div class="row">
+                        <div class="col-md-2 col-sm-2">
+                            <a class="btn btn-light form-submit" href="/addworkout">New WorkoutDay</a>
+                        </div>
+                        <div class="col-md-2 col-sm-2">
+                            <a class="btn btn-light form-submit" href="/users">Manage Users</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 workoutday-container"></div>
+                    </div>
                 </div>
+                <!-- Custom Script -->
 
             </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js"
+                type="text/javascript"></script>
+            <script src="js/workoutday.js" type="text/javascript"></script>
