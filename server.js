@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var express = require('express');
 var app = express();
 var passport = require('passport');
@@ -8,6 +9,13 @@ var exphbs = require('express-handlebars');
 
 var db = require('./models');
 
+=======
+require('dotenv').config();
+var express = require('express');
+var exphbs = require('express-handlebars');
+
+var db = require('./models');
+>>>>>>> a3bc10b0c45d2d180ae3035cf16de0b43714fa34
 
 var PORT = process.env.PORT || 3000;
 
@@ -29,13 +37,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static('public'));
 
-
 // Handlebars
-app.set('views', './views')
-app.engine('hbs', exphbs({
-  extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+app.engine(
+  'handlebars',
+  exphbs({
+    defaultLayout: 'main'
+  })
+);
+app.set('view engine', 'handlebars');
 
 // Routes
 require('./routes/user-api-routes')(app);
@@ -59,11 +68,14 @@ if (process.env.NODE_ENV === 'test') {
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
+<<<<<<< HEAD
   });
 
   // Passport
   app.get('/', function (req, res) {
     res.send('Welcome to Passport with Sequelize');
+=======
+>>>>>>> a3bc10b0c45d2d180ae3035cf16de0b43714fa34
   });
 });
 
