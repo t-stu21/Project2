@@ -1,46 +1,19 @@
 //
-(function () {
-  const form = document.getElementById('calc-form');
-  const results = document.getElementById('results');
-  const errors = document.getElementById('form-error');
+(function() {
+    const form    = document.getElementById('calc-form');
+    const results = document.getElementById('results');
+    const errors  = document.getElementById('form-error');
 
-  /**
-   * Display a form validation error
-   *
-   * @param   {String}  msg  The validation message
-   * @return  {Boolen}       Returns false
-   */
-  function errorMessage(msg) {
-    errors.innerHTML = msg;
-    errors.style.display = '';
-    return false;
-  }
-
-  /**
-   * Display the calculation results
-   *
-   * @param   {Integer}  calories   The calories burned
-   * @param   {Integer}  distance   The distance run
-   * @param   {String}   unit       The distance unit (miles or kilometers)
-   * @param   {Integer}  burnRate   The calories per distance burn rate
-   * @param   {Integer}  calsPerHr  The calories burned per hour
-   */
-  function showResults(calories) {
-    results.innerHTML = `<p>Your basal metabolic rate (BMR) is: <strong>${calories.toFixed(2)} </strong> calories a day.</p><a href="#" id="rs">revise</a>`;
-    results.style.display = '';
-    form.style.display = 'none';
-    errors.style.display = 'none';
-  }
-
-  /**
-   * Hide the results and reset the form
-   */
-  function resetForm(e) {
-    if ((e.target.id = 'rs')) {
-      e.preventDefault();
-      results.style.display = 'none';
-      form.style.display = '';
-      form.reset();
+    /**
+     * Display a form validation error
+     *
+     * @param   {String}  msg  The validation message
+     * @return  {Boolen}       Returns false
+     */
+    function errorMessage(msg) {
+        errors.innerHTML = msg;
+        errors.style.display = '';
+        return false;
     }
   }
 

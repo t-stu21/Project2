@@ -89,8 +89,8 @@ $(document).ready(function() {
       if (data) {
         console.log(data.UserId || data.id);
         // If this workoutday exists, prefill our addworkout forms with its data
-        titleInput.val(data.title);
-        bodyInput.val(data.body);
+        //////titleInput.val(data.title);
+        ///////bodyInput.val(data.body);
         userId = data.UserId || data.id;
         // If we have a workoutday with this id, set a flag for us to know to update the workoutday
         // when we hit submit
@@ -115,8 +115,8 @@ $(document).ready(function() {
       rowsToAdd.push(createUserRow(data[i]));
     }
     userSelect.empty();
-    console.log(rowsToAdd);
-    console.log(userSelect);
+    console.log('rowsToAdd: ' + rowsToAdd);
+    console.log('userSelect: ' + userSelect);
     userSelect.append(rowsToAdd);
     userSelect.val(userId);
   }

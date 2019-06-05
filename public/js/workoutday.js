@@ -69,7 +69,7 @@ $(document).ready(function() {
     var newWorkoutDayCardHeading = $('<div>');
     newWorkoutDayCardHeading.addClass('card-header');
     var deleteBtn = $('<button>');
-    deleteBtn.text('x');
+    deleteBtn.text('DELETE');
     deleteBtn.addClass('delete btn btn-danger');
     var editBtn = $('<button>');
     editBtn.text('EDIT');
@@ -77,8 +77,9 @@ $(document).ready(function() {
     var newWorkoutDayTitle = $('<h2>');
     var newWorkoutDayDate = $('<small>');
     var newWorkoutDayUser = $('<h5>');
-    // newWorkoutDayUser.text('Written by: ' + workoutday.User.name);
-    //newWorkoutDayUser.text('Written by: ' + workoutday.User.name);
+    newWorkoutDayUser.text('UserID: ' + workoutday.UserId + ' & Workout: ' + workoutday.workout);
+    //console.log('workoutday.User.name: ', workoutday.UserId);
+
     newWorkoutDayUser.css({
       float: 'right',
       color: 'blue',
@@ -132,5 +133,35 @@ $(document).ready(function() {
     messageH2.css({ 'text-align': 'center', 'margin-top': '50px' });
     messageH2.html('No workoutdays yet' + partial + ", navigate <a href='/addworkout" + query + "'>here</a> in order to get started.");
     workoutdayContainer.append(messageH2);
+  }
+
+  // A function to get Users and then render our list of Users
+  function getUsers() {
+    $.get('/api/users', renderUserList);
+  }
+  // Function to either render a list of users, or if there are none, direct the user to the page
+  // to create an user first
+  function renderUserList(data) {
+    if (!data.length) {
+      window.location.href = '/users';
+    }
+    $('.hidden').removeClass('hidden');
+    var rowsToAdd = [];
+    for (var i = 0; i < data.length; i++) {
+      rowsToAdd.push(createUserRow(data[i]));
+    }
+    userSelect.empty();
+    console.log('rowsToAdd: ' + rowsToAdd);
+    console.log('userSelect: ' + userSelect);
+    userSelect.append(rowsToAdd);
+    userSelect.val(userId);
+  }
+
+  // Creates the user options in the dropdown
+  function createUserRow(user) {
+    var listOption = $('<option>');
+    listOption.attr('value', user.id);
+    listOption.text(user.name);
+    return listOption;
   }
 });
