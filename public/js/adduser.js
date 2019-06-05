@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   let nameInput = $('#name');
   let passwordInput = $('#password');
   let emailInput = $('#email');
@@ -17,6 +17,8 @@ $(document).ready(function () {
   // A function to handle what happens when the form is submitted to create a new User
   function handleUserFormSubmit(event) {
     event.preventDefault();
+    console.log('test');
+
     // Don't do anything if the name fields hasn't been filled out
     if (
       !nameInput
@@ -61,7 +63,7 @@ $(document).ready(function () {
 
     // Variable for calCalc()
     let calcWeight = weightInput.val().trim();
-    let calcHeight = Number(((heightFeetInput.val().trim()) * 12) + Number(heightInchesInput.val().trim()));
+    let calcHeight = Number(heightFeetInput.val().trim() * 12 + Number(heightInchesInput.val().trim()));
     let calcAge = ageInput.val().trim();
     let calcGender = genderInput.val().trim();
 
@@ -82,11 +84,9 @@ $(document).ready(function () {
       gender: genderInput.val().trim(),
       weight: weightInput.val().trim(),
       goal_weight: goalWeightInput.val().trim(),
-      height: Number(((heightFeetInput.val().trim()) * 12) + Number(heightInchesInput.val().trim())),
+      height: Number(heightFeetInput.val().trim() * 12 + Number(heightInchesInput.val().trim())),
       daily_cals: calCalc()
     };
-
-
 
     console.log('userData: ', userData);
     addUser(userData);
@@ -94,11 +94,7 @@ $(document).ready(function () {
 
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
-<<<<<<< HEAD
     $.post('/api/users', userData).then(() => {
-=======
-    $.post('/api/users', userData).then(function (json) {
->>>>>>> bd11b6d4f3c776e8b8b72208970af217c50bda67
       window.location.href = '/users';
     });
   }
