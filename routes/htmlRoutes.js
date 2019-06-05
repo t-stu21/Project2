@@ -11,21 +11,28 @@ module.exports = function(app) {
 
     // Load example page and pass in an example by id
     app.get("/calcCal", function(req, res) {
-        res.render("calcCal");
+        res.render("calcCal", { schedule });
     });
 
     app.get("/graph", function(req, res) {
-        res.render("graph");
+        res.render("graph", { schedule });
     });
 
     app.get("/manburnt", function(req, res) {
-        res.render("manburnt");
+        res.render("manburnt", { schedule });
     });
 
     app.get("/dietary", function(req, res) {
-        res.render("dietary");
+        res.render("dietary", { schedule });
     });
 
+    app.get("/userinfo", function(req, res) {
+        res.render("userinfo");
+    });
+
+    app.get("/exercise", function(req, res) {
+        res.render("exercise", { schedule });
+    });
     // addworkout route loads addworkout.html
     app.get("/addworkout", function(req, res) {
         res.sendFile(path.join(__dirname, "../public/addworkoutday.html"));
