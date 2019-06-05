@@ -1,15 +1,19 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "password",
+=======
+    "password": "GrootRoot127",
+>>>>>>> 18d7222e40330796c94a1e415c00902954295f00
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "GrootRoot127",
+    "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
