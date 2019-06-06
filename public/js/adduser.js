@@ -1,17 +1,4 @@
-<<<<<<< HEAD
 $(document).ready(function() {
-  let nameInput = $("#name");
-  let passwordInput = $("#password");
-  let emailInput = $("#email");
-  let ageInput = $("#age");
-  let genderInput = $("#gender");
-  let weightInput = $("#weight");
-  let goalWeightInput = $("#goal-weight");
-  let heightFeetInput = $("#height-feet");
-  let heightInchesInput = $("#height-inches");
-=======
-
-$(document).ready(function () {
   let nameInput = $('#name');
   let passwordInput = $('#password');
   let emailInput = $('#email');
@@ -21,23 +8,18 @@ $(document).ready(function () {
   let goalWeightInput = $('#goal-weight');
   let heightFeetInput = $('#height-feet');
   let heightInchesInput = $('#height-inches');
->>>>>>> 97c69c0963420d625768ef70d72f5f3e7aa91997
   //let totalHeightInches = Number(heightFeet) * 12 + Number(heightInches);
 
-  console.log("Hi!");
+  console.log('Hi!');
 
   // Adding event listeners to the form to create a new object, and the button to delete
   // an User
-<<<<<<< HEAD
-  $(document).on("submit", "#adduser-form", handleUserFormSubmit);
-=======
   $(document).on('submit', '#signup', handleUserFormSubmit);
->>>>>>> 97c69c0963420d625768ef70d72f5f3e7aa91997
 
   // A function to handle what happens when the form is submitted to create a new User
   function handleUserFormSubmit(event) {
     event.preventDefault();
-    console.log("test");
+    console.log('test');
 
     // Don't do anything if the name fields hasn't been filled out
     if (
@@ -83,26 +65,16 @@ $(document).ready(function () {
 
     // Variable for calCalc()
     let calcWeight = weightInput.val().trim();
-    let calcHeight = Number(
-      heightFeetInput.val().trim() * 12 + Number(heightInchesInput.val().trim())
-    );
+    let calcHeight = Number(heightFeetInput.val().trim() * 12 + Number(heightInchesInput.val().trim()));
     let calcAge = ageInput.val().trim();
     let calcGender = genderInput.val().trim();
 
     // Function for calculating Daily Caloric needs
     function calCalc() {
-      if (calcGender === "Male") {
-        return (
-          66 +
-          (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 -
-          700
-        ).toFixed(0);
-      } else if (calcGender === "Female") {
-        return (
-          655 +
-          (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 -
-          500
-        ).toFixed(0);
+      if (calcGender === 'Male') {
+        return (66 + (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 - 700).toFixed(0);
+      } else if (calcGender === 'Female') {
+        return (655 + (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 - 500).toFixed(0);
       }
     }
     // Calling the upsertUser function and passing in the value of the name input
@@ -114,26 +86,18 @@ $(document).ready(function () {
       gender: genderInput.val().trim(),
       weight: weightInput.val().trim(),
       goal_weight: goalWeightInput.val().trim(),
-      height: Number(
-        heightFeetInput.val().trim() * 12 +
-          Number(heightInchesInput.val().trim())
-      ),
+      height: Number(heightFeetInput.val().trim() * 12 + Number(heightInchesInput.val().trim())),
       daily_cals: calCalc()
     };
 
-    console.log("userData: ", userData);
+    console.log('userData: ', userData);
     addUser(userData);
   }
 
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
-<<<<<<< HEAD
-    $.post("/api/users", userData).then(() => {
-      window.location.href = "/users";
-=======
     $.post('/api/users', userData).then(() => {
       // window.location.href = '/dashboard';
->>>>>>> 97c69c0963420d625768ef70d72f5f3e7aa91997
     });
   }
 });
