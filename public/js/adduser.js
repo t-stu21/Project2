@@ -98,7 +98,7 @@ $(document).ready(function () {
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
     $.post('/api/users', userData).then(() => {
-      // window.location.href = '/dashboard';
+      window.location.href = '/dashboard';
     });
   }
 });
