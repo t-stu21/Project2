@@ -42,10 +42,4 @@ module.exports = function (app) {
     res.render('user-manager');
   });
 
-  app.get('/signup', function (req, res) {
-    res.render('signup');
-  });
-  app.get('/login', function (req, res) {
-    res.render('login');
-  });
 };

@@ -16,16 +16,16 @@
 
 <body>
   <div class="wrapper">
-    <form class="form-signin">
-      <h4>Not a Member Yet?</h4>
-      <a href="/signup" type="button11" class="btn btn-success">Sign Up!</a>
-      <h2 class="form-signin-heading">Member Login</h2>
-      <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-      <input type="password" class="form-control" name="password" placeholder="Password" required="" />
-      {{!-- <label class="checkbox">
+    <form class="form-signin" id="signin" name="signin" method="post" action="signin"></form>
+    <h4>Not a Member Yet?</h4>
+    <a href="/signup" type="button11" class="btn btn-success">Sign Up!</a>
+    <h2 class="form-signin-heading">Member Login</h2>
+    <input type="text" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
+    <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+    {{!-- <label class="checkbox">
       <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
     </label> --}}
-      <button type="button" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary" value="Sign In">Login</button>
     </form>
   </div>
 
