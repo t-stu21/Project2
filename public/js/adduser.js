@@ -11,7 +11,6 @@ $(document).ready(function () {
   let heightInchesInput = $('#height-inches');
   //let totalHeightInches = Number(heightFeet) * 12 + Number(heightInches);
 
-  console.log("Hi!");
 
   // Adding event listeners to the form to create a new object, and the button to delete
   // an User
@@ -20,7 +19,6 @@ $(document).ready(function () {
   // A function to handle what happens when the form is submitted to create a new User
   function handleUserFormSubmit(event) {
     event.preventDefault();
-    console.log('test');
 
     // Don't do anything if the name fields hasn't been filled out
     if (
@@ -93,6 +91,7 @@ $(document).ready(function () {
 
     console.log('userData: ', userData);
     addUser(userData);
+
   }
   // dfassdffds
   // A function for creating an user. Calls getUsers upon completion
