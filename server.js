@@ -16,6 +16,7 @@ var models = require('./models');
 //load passport strategies
 require('./config/passport/passport.js')(passport, models.user);
 
+var db = require('./models');
 
 var PORT = process.env.PORT || 3000;
 
@@ -25,16 +26,16 @@ app.use(bodyParser.json());
 
 //For Passport
 //session secret
-app.use(session({
-  secret: 'keyboard cat',
-  resave: true,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true
+  })
+);
 app.use(passport.initialize());
 //persistant login sessions
 app.use(passport.session());
-
-
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -56,7 +57,7 @@ require('./routes/user-api-routes')(app);
 require('./routes/workoutday-api-routes')(app);
 require('./routes/htmlRoutes')(app);
 // Render 404 page for any unmatched routes
-app.get('*', function (req, res) {
+app.get('*', function(req, res) {
   res.render('404');
 });
 
@@ -68,20 +69,18 @@ if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
 
-
 // Starting the server, syncing our models ------------------------------------/
-models.sequelize.sync().then(function () {
-  console.log('Nice! Database looks fine')
+models.sequelize.sync().then(function() {
+  console.log('Nice! Database looks fine');
 
-  app.listen(PORT, function () {
+  app.listen(PORT, function() {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
   });
 
   // Passport
-  app.get('/', function (req, res) {
+  app.get('/', function(req, res) {
     res.send('Welcome to Passport with Sequelize');
   });
 });
-
 
 module.exports = app;
