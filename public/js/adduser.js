@@ -10,8 +10,6 @@ $(document).ready(function() {
   let heightInchesInput = $('#height-inches');
   //let totalHeightInches = Number(heightFeet) * 12 + Number(heightInches);
 
-  console.log('Hi!');
-
   // Adding event listeners to the form to create a new object, and the button to delete
   // an User
   $(document).on('submit', '#signup', handleUserFormSubmit);
@@ -19,7 +17,6 @@ $(document).ready(function() {
   // A function to handle what happens when the form is submitted to create a new User
   function handleUserFormSubmit(event) {
     event.preventDefault();
-    console.log('test');
 
     // Don't do anything if the name fields hasn't been filled out
     if (
@@ -90,14 +87,14 @@ $(document).ready(function() {
       daily_cals: calCalc()
     };
 
-    console.log('userData: ', userData);
+    // console.log('userData: ', userData);
     addUser(userData);
   }
 
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
     $.post('/api/users', userData).then(() => {
-      // window.location.href = '/dashboard';
+      window.location.href = '/dashboard';
     });
   }
 });
