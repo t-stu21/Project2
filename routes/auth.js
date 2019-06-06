@@ -13,6 +13,9 @@ module.exports = function (app) {
     }
     ));
 
+    app.get('/login', authController.login);
+
+
     app.post('/login', function (req, res, next) {
         //send email
         db.User.findOne({
