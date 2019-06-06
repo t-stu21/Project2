@@ -282,7 +282,7 @@ li {
 
 .buttons {
   text-align: center;
-  height: 50%;
+  height: 30%;
   width: 100%;
 }
 
@@ -547,4 +547,12 @@ label {
 
 .wrk {
   margin: 0 auto;
+  padding: 0px;
+}
+
+.bottom-buttons {
+  margin-top: 0px;
+  border-radius: 0px;
+  width: 100%;
+  height: 100%;
 }
