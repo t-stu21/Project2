@@ -54,8 +54,7 @@ module.exports = function (app) {
       .then(function (dbUser) {
         res.json(dbUser);
       })
-      .catch()
-      .then(function (err) {
+      .catch(function (err) {
         res.status(500).send(err);
       });
   });
