@@ -282,7 +282,7 @@ li {
 
 .buttons {
   text-align: center;
-  height: 30%;
+  height: 50%;
   width: 100%;
 }
 
@@ -526,4 +526,25 @@ select {
 
 .header-signup {
   margin: 20px 0 20px 0;
+}
+label {
+  margin-top: 5px;
+}
+
+#user,
+#addworkout {
+  float: right;
+}
+
+#user {
+  margin-top: 0px;
+}
+
+.no-margin {
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.wrk {
+  margin: 0 auto;
 }
