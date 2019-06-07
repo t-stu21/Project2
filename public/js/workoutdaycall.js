@@ -15,6 +15,8 @@ $(document).ready(function() {
       dataType: "json",
       success: function(data) {
         console.log("Data: " + JSON.stringify(data));
+        var dailyCheckins = 0;
+        var dayChk = [];
         var totalCalories = 0;
         var currentDate = new Date();
         // note fix jan so it is 1 and not 0
@@ -35,11 +37,17 @@ $(document).ready(function() {
             "-" +
             itemDate.getFullYear().toString();
 
+          dayChk.push(itemDateStr);
+
           if (currentDateString == itemDateStr) {
             totalCalories = +data[i].caloriesin;
             console.log(totalCalories);
           }
         }
+
+        dailyCheckins = jQuery.unique(dayChk).length;
+
+        $("#ch1").html(dailyCheckins);
 
         $("#topL").html(totalCalories);
       },
