@@ -7,6 +7,22 @@ $(document).ready(function() {
 
   // console.log(scheduleTemplate);
 
+  function arg_calCalc(calcGender, calcWeight, calcHeight, calcAge) {
+    if (calcGender === "Male") {
+      return (
+        66 +
+        (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 -
+        700
+      ).toFixed(0);
+    } else if (calcGender === "Female") {
+      return (
+        655 +
+        (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 -
+        500
+      ).toFixed(0);
+    }
+  }
+
   var makeCall = function() {
     $.ajax({
       url: "/api/workoutdays",
@@ -50,6 +66,22 @@ $(document).ready(function() {
         $("#ch1").html(dailyCheckins);
 
         $("#topL").html(totalCalories);
+      },
+      error: function(request, error) {
+        console.log("Request: " + JSON.stringify(request));
+      }
+    });
+
+    $.ajax({
+      url: "/api/users",
+      type: "GET",
+
+      dataType: "json",
+      success: function(data) {
+        console.log("Data: " + JSON.stringify(data));
+        user = data[0];
+        $("#topR").html(user.daily_cals);
+        console.log(user);
       },
       error: function(request, error) {
         console.log("Request: " + JSON.stringify(request));
