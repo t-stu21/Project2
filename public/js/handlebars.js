@@ -48,31 +48,3 @@ $(document).ready(function () {
 
 
 });
-
-var calorieShit = {
-    "id": 2,
-    "name": "Trev",
-    "email": "trev@gmail.com",
-    "password": "$2a$10$NU4o2/d.IgvolMH0gfyWaec3xL9xVnP9Wd0ugLFbz9fXFGASrjd52",
-    "last_login": null,
-    "status": "active",
-    "age": 26,
-    "gender": "Male",
-    "weight": 180,
-    "height": 77,
-    "goal_weight": 190,
-    "daily_cals": "2339",
-    "createdAt": "2019-06-06T04:33:22.000Z",
-    "updatedAt": "2019-06-06T04:33:22.000Z"
-}
-
-$(document).ready(function () {
-
-    var userStuff = $("#goals").html();
-    console.log(userStuff)
-    var compileUserStuff = Handlebars.compile(userStuff);
-
-    $('.result').html(compileUserStuff(caloriesShit));
-
-
-});
