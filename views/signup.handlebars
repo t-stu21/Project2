@@ -48,7 +48,7 @@
                             <div class="new-user">
                                 <form id="adduser-form" class="needs-validation" novalidate>
                                     <div class="form-row">
-                                        <div class="col-md-3 mb-3">
+                                        <div class="col-md-3 mb-3 tst">
                                             <label for="name">Name</label>
                                             <input type="text" class="form-control exercise" id="name"
                                                 placeholder="Name" required>
@@ -64,8 +64,8 @@
                                                 Please choose a password.
                                             </div>
                                         </div>
-                                        <div class="col-md-6 mb-3">
-                                            <label for="email">Email Address</label>
+                                        <div class="col-md-6 mb-3" style="background-color: transparent;">
+                                            <label for="email" id='em'>Email Address</label>
                                             <div class="input-group">
                                                 <input type="email" class="form-control exercise" id="email"
                                                     placeholder="name@example.com" aria-describedby="inputGroupPrepend"
@@ -162,7 +162,8 @@
                                         </div>
                                     </div>
                                     <div class="button-wrapper text-center">
-                                        <button class="btn btn-primary form-submit" type="submit">Create
+                                        <button id="signup-form-btn" class="btn btn-primary form-submit"
+                                            type="submit">Create
                                             User</button>
                                     </div>
                                 </form>
@@ -196,4 +197,3 @@
                 }, false);
             })();
         </script>
-        {{>footer}}
