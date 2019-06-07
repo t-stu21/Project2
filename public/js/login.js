@@ -29,7 +29,11 @@ $(document).ready(function() {
 
     console.log('loginData', loginData);
 
-    loginNow(loginData);
+    function loginNow(loginData) {
+      $.post('/login', loginData).then(() => {
+        window.location.href = '/';
+      });
+    }
 
     function loginNow(loginData) {
       $.post('/login', loginData).then(() => {
