@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Getting jQuery references to the workoutday body, title, form, and user select
-  // var bodyInput = $('#body');
+  var bodyInput = $('#body');
   var addworkoutForm = $('#addworkout');
   let userSelect = $('#user');
   let caloriesInSelect = $('#calories-in');
@@ -101,9 +101,7 @@ $(document).ready(function() {
 
   // A function to get Users and then render our list of Users
   function getUsers() {
-    // $.get('/api/users', renderUserList);
-    $.get('/api/users');
-    //$.get('/api/users');
+    $.get('/api/users', renderUserList);
   }
   // Function to either render a list of users, or if there are none, direct the user to the page
   // to create an user first

@@ -1,53 +1,70 @@
-<div class="row">
-    <div class="container-fluid">
-        <div class="app" style="height: 900px;">
-            <div class="row top-container">
-                {{>topleft}}
-                <div class="col-lg-2"></div>
-                <a class="alyve col-md-4">
-                    <div class="app-title text-center">
+<div class="container-fluid">
+    <div class="app">
+        <div class="row home-sections">
+            <div class="col-lg-1 col-md-12"></div>
+            {{>topleft}}
+            <div class="col-lg-2 col-md-12"></div>
 
-                        <div class="title-text"><span style="font-size: 90px; color: white;">
-                                <i class="fas fa-heartbeat"></i></span>ALYVE</div>
+
+            <div class="col-lg-3 col-md-12 home-nav-btn-columns">
+                <div class="shapes stubborn-margin-hack">
+                    <div class="rectangle-container">
+                        <div class="rectangle-multiline">
+                            <div class="title-text">
+                                <a href="/">
+                                    <span style="color: white;"><i class="fas fa-heartbeat"></i></span>&nbsp;ALYVE
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <div class="col-lg-2"></div>
-                {{>topright}}
-
-
-
+                </div>
             </div>
+            <div class="col-lg-1 col-md-12"></div>
+            {{>topright}}
 
-            <div class="row top-container" id="chal-g">
-                {{>challenge}}
-                <div class="col-lg-2"></div>
-                <a href="/addworkout" class="alyve col-md-4" id="challenges">
-                    <div class="app-title text-center">
+        </div>
 
-                        <div class="title-text"><span style="font-size: 90px; color: white;">
-                                <i class="fas fa-fire"></i></span>Go Lyve</div>
+        <div class="row home-sections">
+            <div class="col-lg-1 col-md-12"></div>
+            {{>challenge}}
+            <div class="col-lg-2 col-md-12"></div>
+            <div class="col-lg-3 col-md-12 home-nav-btn-columns">
+                <div class="shapes stubborn-margin-hack">
+                    <div class="rectangle-container">
+                        <div class="rectangle-multiline red-bkgrd">
+                            <div class="title-text"><span style="color: white;">
+                                    <a href="/addworkout">
+                                        <i class="fas fa-fire"></i></span>&nbsp;Go Lyve
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <div class="col-lg-2"></div>
-                {{>challenge2}}
-
-
-
+                </div>
             </div>
+            <div class="col-lg-1 col-md-12"></div>
+            {{>challenge2}}
+        </div>
 
-            <div class="row top-container" id="chal-g">
-                {{>challenge3}}
-                <div class="col-lg-2"></div>
-                <a href="/workoutday" class="alyve col-md-4" id="progress">
-                    <div class="app-title text-center">
 
-                        <div class="title-text"><span style="font-size: 90px; color: white;">
-                                <i class="fas fa-check"></i></span>Progress</div>
+        <div class="row home-sections">
+            <div class="col-lg-1 col-md-12"></div>
+            {{>challenge3}}
+            <div class="col-lg-2 col-md-12"></div>
+            <div class="col-lg-3 col-md-12 home-nav-btn-columns">
+                <div class="shapes stubborn-margin-hack">
+                    <div class="rectangle-container">
+                        <div class="rectangle-multiline green-bkgrd">
+                            <div class="title-text"><span style="color: white;">
+                                    <a href="/workoutday">
+                                        <i class="fas fa-check"></i></span>Progress
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                </a>
-                <div class="col-lg-2"></div>
-                {{>challenge4}}
-
-
-
+                </div>
             </div>
+            <div class="col-lg-1 col-md-12"></div>
+            {{>challenge4}}
+        </div>
+    </div>
+</div>
