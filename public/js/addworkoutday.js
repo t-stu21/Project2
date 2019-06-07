@@ -101,16 +101,15 @@ $(document).ready(function() {
 
   // A function to get Users and then render our list of Users
   function getUsers() {
-    $.get('/api/users', renderUserList);
+    // $.get('/api/users', renderUserList);
+    $.get('/api/users');
     //$.get('/api/users');
   }
   // Function to either render a list of users, or if there are none, direct the user to the page
   // to create an user first
   function renderUserList(data) {
     if (!data.length) {
-      console.log('err');
-
-      //window.location.href = '/users';
+      // window.location.href = '/users';
     }
     $('.hidden').removeClass('hidden');
     var rowsToAdd = [];
