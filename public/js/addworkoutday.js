@@ -1,15 +1,15 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // Getting jQuery references to the workoutday body, title, form, and user select
-  var bodyInput = $('#body');
-  var addworkoutForm = $('#addworkout');
-  let userSelect = $('#user');
-  let caloriesInSelect = $('#calories-in');
-  let caloriesOutSelect = $('#calories-out');
-  let workoutSelect = $('#workout');
-  let durationInput = $('#duration');
+  var bodyInput = $("#body");
+  var addworkoutForm = $("#addworkout");
+  let userSelect = $("#user");
+  let caloriesInSelect = $("#calories-in");
+  let caloriesOutSelect = $("#calories-out");
+  let workoutSelect = $("#workout");
+  let durationInput = $("#duration");
 
   // Adding an event listener for when the form is submitted
-  $(addworkoutForm).on('submit', handleFormSubmit);
+  $(addworkoutForm).on("submit", handleFormSubmit);
   // Gets the part of the url that comes after the "?" (which we have if we're updating a workoutday)
   var url = window.location.search;
   var workoutdayId;
@@ -19,13 +19,13 @@ $(document).ready(function () {
 
   // If we have this section in our url, we pull out the workoutday id from the url
   // In '?workoutday_id=1', workoutdayId is 1
-  if (url.indexOf('?workoutday_id=') !== -1) {
-    workoutdayId = url.split('=')[1];
-    getWorkoutDayData(workoutdayId, 'workoutday');
+  if (url.indexOf("?workoutday_id=") !== -1) {
+    workoutdayId = url.split("=")[1];
+    getWorkoutDayData(workoutdayId, "workoutday");
   }
   // Otherwise if we have an user_id in our url, preset the user select box to be our User
-  else if (url.indexOf('?user_id=') !== -1) {
-    userId = url.split('=')[1];
+  else if (url.indexOf("?user_id=") !== -1) {
+    userId = url.split("=")[1];
   }
 
   // Getting the users, and their workoutdays
@@ -43,7 +43,7 @@ $(document).ready(function () {
       //!bodyInput.val().trim() ||
       !userSelect.val().trim()
     ) {
-      console.log('Error with NULL values');
+      console.log("Error with NULL values");
       return;
     }
     // Constructing a newWorkoutDay object to hand to the database
@@ -67,8 +67,8 @@ $(document).ready(function () {
 
   // Submits a new workoutday and brings user to workoutday page upon completion
   function submitWorkoutDay(workoutday) {
-    $.post('/api/workoutdays', workoutday, function () {
-      window.location.href = '/workoutday';
+    $.post("/api/workoutdays", workoutday, function() {
+      window.location.href = "/workoutday";
     });
   }
 
@@ -76,16 +76,16 @@ $(document).ready(function () {
   function getWorkoutDayData(id, type) {
     var queryUrl;
     switch (type) {
-      case 'workoutday':
-        queryUrl = '/api/workoutdays/' + id;
+      case "workoutday":
+        queryUrl = "/api/workoutdays/" + id;
         break;
-      case 'user':
-        queryUrl = '/api/users/' + id;
+      case "user":
+        queryUrl = "/api/users/" + id;
         break;
       default:
         return;
     }
-    $.get(queryUrl, function (data) {
+    $.get(queryUrl, function(data) {
       if (data) {
         console.log(data.UserId || data.id);
         // If this workoutday exists, prefill our addworkout forms with its data
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
   // A function to get Users and then render our list of Users
   function getUsers() {
-    $.get('/api/users', renderUserList);
+    $.get("/api/users", renderUserList);
   }
   // Function to either render a list of users, or if there are none, direct the user to the page
   // to create an user first
@@ -109,22 +109,22 @@ $(document).ready(function () {
     if (!data.length) {
       // window.location.href = '/users';
     }
-    $('.hidden').removeClass('hidden');
+    $(".hidden").removeClass("hidden");
     var rowsToAdd = [];
     for (var i = 0; i < data.length; i++) {
       rowsToAdd.push(createUserRow(data[i]));
     }
     userSelect.empty();
-    console.log('rowsToAdd: ' + rowsToAdd);
-    console.log('userSelect: ' + userSelect);
+    console.log("rowsToAdd: " + rowsToAdd);
+    console.log("userSelect: " + userSelect);
     userSelect.append(rowsToAdd);
     userSelect.val(userId);
   }
 
   // Creates the user options in the dropdown
   function createUserRow(user) {
-    var listOption = $('<option>');
-    listOption.attr('value', user.id);
+    var listOption = $("<option>");
+    listOption.attr("value", user.id);
     listOption.text(user.name);
     return listOption;
   }
@@ -132,11 +132,11 @@ $(document).ready(function () {
   // Update a given workoutday, bring user to the workoutday page when done
   function updateWorkoutDay(workoutday) {
     $.ajax({
-      method: 'PUT',
-      url: '/api/workoutdays',
+      method: "PUT",
+      url: "/api/workoutdays",
       data: workoutday
-    }).then(function () {
-      window.location.href = '/workoutday';
+    }).then(function() {
+      window.location.href = "/workoutday";
     });
   }
 });
