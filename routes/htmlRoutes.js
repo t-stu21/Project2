@@ -48,4 +48,12 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
     res.render("login");
   });
+
+  app.get("/dailygoals", function(req, res) {
+    res.render("dailygoals");
+  });
+
+  app.get("/test2", function(req, res) {
+    res.render("test2");
+  });
 };

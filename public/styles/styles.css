@@ -297,7 +297,7 @@ li {
 #kcal-title,
 #kcal,
 .goal {
-  color: skyblue;
+  color: white;
 }
 
 .graph-knob-mt-100 {
@@ -453,8 +453,8 @@ select {
 }
 
 .exercise {
-  background-color: #1e2125;
-  color: skyblue;
+  background-color: lime;
+  color: white;
   outline: none;
   border: none;
   cursor: pointer;
@@ -490,10 +490,12 @@ select {
   background-color: #1e2125;
 }
 
-.col-md-3,
+.offset-md-3,
 .col-md-6 {
-  background-color: #1e2125;
-  color: lime;
+  background-color: lime;
+  color: white;
+  border-radius: 25% 25% 25% 25%;
+  width: 100%;
 }
 .col-md-3 > select {
   background-color: #1e2125;
@@ -594,12 +596,13 @@ img {
 
 #circle-numbers {
   font-size: 4.2em;
+  color: white;
 }
 
 .circle-shape {
   max-height: 192.35px;
   max-width: 15%;
-  background-color: rgb(253, 253, 253);
+  background-color: skyblue;
   border-radius: 50%;
 }
 
@@ -622,22 +625,82 @@ img {
 .results-card {
   min-height: 216px;
   border-radius: 50%;
-  background-color: white;
+  background-color: lime;
   margin-left: 120px;
 }
 
 #gl,
 #as {
   font-size: 25px;
-  color: lime;
+  color: white;
 }
 
 #ten,
 #tfe {
   font-size: 50px;
-  color: lime;
+  color: white;
 }
 
 .card-txt {
   margin-top: 50px;
+}
+
+.top-bubbles {
+  background-color: #1e2125;
+  margin-right: 10px;
+}
+
+.bubble-shape {
+  min-height: 192.35px;
+  max-width: 15%;
+  border-radius: 50%;
+  background-color: lime;
+}
+.bubble-text {
+  margin-top: 17%;
+}
+
+#bubble-numbers {
+  font-size: 4.2em;
+  color: white;
+}
+
+#kcal-bub,
+#kcal-bub2,
+#kcal-bub3,
+#kcal-bub4 {
+  color: white;
+}
+
+#ur-lyve-kid {
+  background-color: lime;
+}
+
+#challenges {
+  background-color: red;
+}
+
+#chal-g {
+  margin-top: 50px;
+}
+
+.ch {
+  background-color: lime;
+}
+
+.th {
+  background-color: gold;
+}
+
+#progress {
+  background-color: lime;
+}
+
+.flt {
+  background-color: skyblue;
+  color: white;
+}
+
+#em {
+  color: #1e2125;
 }
