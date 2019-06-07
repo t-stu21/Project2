@@ -1,5 +1,6 @@
 var passport = require('passport');
 var authController = require('../controllers/authcontroller.js');
+var db = require('../models');
 
 
 module.exports = function (app) {
@@ -20,7 +21,7 @@ module.exports = function (app) {
         //send email
         db.User.findOne({
             where: {
-                email: req.body.email
+                email: req.params.email
             }
         }).then(function (dbUser) {
             if (!dbUser) {
@@ -53,17 +54,17 @@ module.exports = function (app) {
 
     // ));
 
-    app.get('/dashboard', isLoggedIn, authController.dashboard);
+    // app.get('/dashboard', isLoggedIn, authController.dashboard);
 
-    function isLoggedIn(req, res, next) {
+    // function isLoggedIn(req, res, next) {
 
-        if (req.isAuthenticated())
+    //     if (req.isAuthenticated())
 
-            return next();
+    //         return next();
 
-        res.redirect('/login');
+    //     res.redirect('/login');
 
-    }
+    // }
 
     app.get('/logout', authController.logout);
 }

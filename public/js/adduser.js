@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
   let nameInput = $('#name');
   let passwordInput = $('#password');
@@ -10,13 +11,13 @@ $(document).ready(function () {
   let heightInchesInput = $('#height-inches');
   //let totalHeightInches = Number(heightFeet) * 12 + Number(heightInches);
 
+
   // Adding event listeners to the form to create a new object, and the button to delete
   // an User
-  $(document).on('submit', '#signup-form-btn', handleUserFormSubmit);
+  $(document).on('click', '#signup-form-btn', handleUserFormSubmit);
 
   // A function to handle what happens when the form is submitted to create a new User
   function handleUserFormSubmit(event) {
-    console.log('asdkjljlkfdsdjklfsadjlskf')
     event.preventDefault();
 
     // Don't do anything if the name fields hasn't been filled out
@@ -87,16 +88,18 @@ $(document).ready(function () {
       height: Number(heightFeetInput.val().trim() * 12 + Number(heightInchesInput.val().trim())),
       daily_cals: calCalc()
     };
-    console.log(userData)
-    // console.log('userData: ', userData);
-    addUser(userData);
-  }
 
+    console.log('userData: ', userData);
+    addUser(userData);
+
+  }
+  // dfassdffds
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
-    console.log('userData: ', userData);
     $.post('/api/users', userData).then(() => {
-      // window.location.href = '/dashboard';
+      window.location.href = '/';
     });
   }
+
+
 });

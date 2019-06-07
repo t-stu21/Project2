@@ -9,7 +9,7 @@
                             Todays Result
                         </span>
                         <span class="result">
-                            <span class="num">0000{{example.id}}</span>
+                            <span class="num">0000</span>
                             <span class="unit">
                                 Kcal
                             </span>
@@ -23,7 +23,7 @@
                             Daily Goal
                         </span>
                         <span class="result">
-                            <span class="num" id="goal">0000{{example.id}}</span>
+                            <span class="num" id="goals">{{calories}}</span>
                             <span class="unit" id="goal-unit">
                                 Kcal
                             </span>
@@ -38,8 +38,8 @@
                         {{#each schedule.days}}
                         <ul>
                             <li>{{name}}
-                                <span><a href="/exercise" class="lyve">{{status}}</a></span>
-                                <span><a href="/exercise" class="date">{{number}}</a></span>
+                                <span><a href="/workoutday" class="lyve">{{status}}</a></span>
+                                <span><a href="/workoutday" class="date">{{number}}</a></span>
                                 <span class="circle present"></span>
                             </li>
                         </ul>
