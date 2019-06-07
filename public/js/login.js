@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         function loginNow(loginData) {
             $.post('/login').then(() => {
-                window.location.href = "/"
+                window.location.href = "/dashboard"
             });
         }
 

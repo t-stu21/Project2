@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting jQuery references to the workoutday body, title, form, and user select
   var bodyInput = $('#body');
   var addworkoutForm = $('#addworkout');
@@ -67,7 +67,7 @@ $(document).ready(function() {
 
   // Submits a new workoutday and brings user to workoutday page upon completion
   function submitWorkoutDay(workoutday) {
-    $.post('/api/workoutdays', workoutday, function() {
+    $.post('/api/workoutdays', workoutday, function () {
       window.location.href = '/workoutday';
     });
   }
@@ -85,7 +85,7 @@ $(document).ready(function() {
       default:
         return;
     }
-    $.get(queryUrl, function(data) {
+    $.get(queryUrl, function (data) {
       if (data) {
         console.log(data.UserId || data.id);
         // If this workoutday exists, prefill our addworkout forms with its data
@@ -107,7 +107,7 @@ $(document).ready(function() {
   // to create an user first
   function renderUserList(data) {
     if (!data.length) {
-      window.location.href = '/users';
+      // window.location.href = '/users';
     }
     $('.hidden').removeClass('hidden');
     var rowsToAdd = [];
@@ -135,7 +135,7 @@ $(document).ready(function() {
       method: 'PUT',
       url: '/api/workoutdays',
       data: workoutday
-    }).then(function() {
+    }).then(function () {
       window.location.href = '/workoutday';
     });
   }

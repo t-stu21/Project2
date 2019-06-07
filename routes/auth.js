@@ -18,6 +18,7 @@ module.exports = function (app) {
 
 
     app.post('/login', function (req, res, next) {
+        console.log('hello world');
         //send email
         db.User.findOne({
             where: {
