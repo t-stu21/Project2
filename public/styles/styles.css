@@ -619,5 +619,24 @@ img {
 }
 
 .results-card {
+  min-height: 216px;
   border-radius: 50%;
+  background-color: white;
+  margin-left: 120px;
+}
+
+#gl,
+#as {
+  font-size: 25px;
+  color: lime;
+}
+
+#ten,
+#tfe {
+  font-size: 50px;
+  color: lime;
+}
+
+.card-txt {
+  margin-top: 50px;
 }
