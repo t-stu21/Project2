@@ -33,8 +33,8 @@ $(document).ready(function () {
         loginNow(loginData);
 
         function loginNow(loginData) {
-            $.post('/login').then(() => {
-                window.location.href = "/dashboard"
+            $.post('/login', loginData).then(() => {
+                window.location.href = "/"
             });
         }
 

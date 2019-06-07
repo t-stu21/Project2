@@ -1,6 +1,7 @@
 var passport = require('passport');
 var authController = require('../controllers/authcontroller.js');
 var db = require('../models');
+var bcrypt = require('bcryptjs');
 
 
 module.exports = function (app) {
@@ -18,11 +19,11 @@ module.exports = function (app) {
 
 
     app.post('/login', function (req, res, next) {
-        console.log('hello world');
+        console.log(req.body);
         //send email
         db.User.findOne({
             where: {
-                email: req.params.email
+                email: req.body.email
             }
         }).then(function (dbUser) {
             if (!dbUser) {
@@ -38,6 +39,7 @@ module.exports = function (app) {
             }
 
         }).catch(function (err) {
+            console.log(err);
             res.status(500).send(err);
         });
         //send password
@@ -47,13 +49,13 @@ module.exports = function (app) {
         //if not return an err
     });
 
-    // app.post('/login', passport.authenticate('local-login', {
-    //     successRedirect: '/dashboard',
+    app.post('/login', passport.authenticate('local-login', {
+        successRedirect: '/dashboard',
 
-    //     failureRedirect: '/login'
-    // }
+        failureRedirect: '/login'
+    }
 
-    // ));
+    ));
 
     // app.get('/dashboard', isLoggedIn, authController.dashboard);
 
