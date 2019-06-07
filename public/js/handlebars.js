@@ -72,7 +72,7 @@ $(document).ready(function () {
     console.log(userStuff)
     var compileUserStuff = Handlebars.compile(userStuff);
 
-    $('.result').html(compileUserStuff(calories));
+    $('.result').html(compileUserStuff(caloriesShit));
 
 
 });
