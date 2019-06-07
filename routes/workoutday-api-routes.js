@@ -13,8 +13,8 @@ module.exports = function(app) {
   // GET route for getting all of the workoutdays
   app.get('/api/workoutdays', function(req, res) {
     var query = {};
-    if (req.query.User_id) {
-      query.UserId = req.query.User_id;
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
     }
 
     db.WorkoutDay.findAll({
