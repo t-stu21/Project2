@@ -1,56 +1,17 @@
 <div class="row">
     <div class="container-fluid">
-        <div class="app">
+        <div class="app" style="height: 900px;">
             <div class="row top-container">
-
                 {{>topleft}}
                 <div class="col-lg-2"></div>
-                <div class="alyve col-md-4" id="ur-lyve-kid">
-                    <div class="app-title text-center">
-
-                        <div class="title-text"><span style="font-size: 60px; color: white;">
-                                <i class="fas fa-heartbeat"></i></span>YOU'RE LYVE</div>
-                    </div>
-                </div>
-                <div class="col-lg-2"></div>
-                {{>topright}}
-
-
-            </div>
-            <div class="row body">
-                <div class="sch" id="goal">
-                    <div class="col-lg-1"></div>
-
-
-
-
-
-                    <div class="col-lg-1"></div>
-                </div>
-
-            </div>
-
-            <div>
-                <div class="container hidden">
-
-
-                    <div class="col-md-2 col-sm-2 wrk">
-                        <a class="btn btn-light form-submit flt" href="/workoutday">Go to WorkoutDay</a>
-                    </div>
-                    <div class="col-md-2 col-sm-2 wrk">
-                        <a class="btn btn-light form-submit flt" href="/users">Manage Users</a>
-                    </div>
-
-
-
+                <div class="alyve col-md-4">
                     <div class="row">
                         <div class="col-md-6 offset-md-3">
-                            <form id="addworkout">
-                                <div class="form-group wrkout">
+                            <form>
+                                <div class="form-group">
                                     <div class="form-row">
                                         <label for="workout">Workout</label>
-                                        <select class="form-control exercise no-margin text-center" id="workout"
-                                            required>
+                                        <select class="form-control" required>
                                             <option value="6">aerobics</option>
                                             <option value="7">backpacking</option>
                                             <option value="4.5">badminton (singles)</option>
@@ -225,4 +186,6 @@
                             </form>
                         </div>
                     </div>
-                    {{>footer}}
+                </div>
+                <div class="col-lg-2"></div>
+                {{>topright}}

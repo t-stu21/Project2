@@ -35,10 +35,6 @@ body {
   padding-top: 15px;
 }
 
-.fat-burning {
-  left: 35px;
-}
-
 .user-attendance {
   right: 35px;
 }
@@ -267,7 +263,7 @@ li {
   margin-top: 10px;
   font-size: 70px;
   color: white;
-  font-family: "Exo", sans-serif;
+  font-family: "Abel", sans-serif;
 }
 
 .bottom-buttons {
@@ -282,6 +278,7 @@ li {
 
 .buttons {
   text-align: center;
+  padding: 0px;
   height: 30%;
   width: 100%;
 }
@@ -296,8 +293,11 @@ li {
 
 #goal,
 #goal-unit,
+#kcal-today,
+#kcal-title,
+#kcal,
 .goal {
-  color: gold;
+  color: white;
 }
 
 .graph-knob-mt-100 {
@@ -453,8 +453,8 @@ select {
 }
 
 .exercise {
-  background-color: #1e2125;
-  color: skyblue;
+  background-color: lime;
+  color: white;
   outline: none;
   border: none;
   cursor: pointer;
@@ -490,10 +490,12 @@ select {
   background-color: #1e2125;
 }
 
-.col-md-3,
+.offset-md-3,
 .col-md-6 {
-  background-color: #1e2125;
-  color: lime;
+  background-color: lime;
+  color: white;
+  border-radius: 25% 25% 25% 25%;
+  width: 100%;
 }
 .col-md-3 > select {
   background-color: #1e2125;
@@ -555,4 +557,150 @@ label {
   border-radius: 0px;
   width: 100%;
   height: 100%;
+}
+
+.top-container {
+  background-color: #1e2125;
+  height: 30%;
+  bottom: 30px;
+}
+
+.app-img {
+  margin-right: 0px;
+}
+
+img {
+  background-color: #1e2125;
+}
+
+.alyve {
+  border-radius: 50%;
+  background-color: skyblue;
+}
+
+.num {
+  color: skyblue;
+}
+
+.header {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.circle-text {
+  margin-top: 17%;
+}
+
+#circle-numbers {
+  font-size: 4.2em;
+  color: white;
+}
+
+.circle-shape {
+  max-height: 192.35px;
+  max-width: 15%;
+  background-color: skyblue;
+  border-radius: 50%;
+}
+
+.top-container {
+  max-height: 192.35px;
+  margin: 10px 0px 0 70px;
+}
+
+.title-text {
+  color: white;
+  margin-top: 30px;
+}
+
+.alyve {
+  max-height: 779.438px;
+  max-width: 30%;
+  border-radius: 25% 25% 25% 25%;
+}
+
+.results-card {
+  min-height: 216px;
+  border-radius: 50%;
+  background-color: lime;
+  margin-left: 120px;
+}
+
+#gl,
+#as {
+  font-size: 25px;
+  color: white;
+}
+
+#ten,
+#tfe {
+  font-size: 50px;
+  color: white;
+}
+
+.card-txt {
+  margin-top: 50px;
+}
+
+.top-bubbles {
+  background-color: #1e2125;
+  margin-right: 10px;
+}
+
+.bubble-shape {
+  min-height: 192.35px;
+  max-width: 15%;
+  border-radius: 50%;
+  background-color: lime;
+}
+.bubble-text {
+  margin-top: 17%;
+}
+
+#bubble-numbers {
+  font-size: 4.2em;
+  color: white;
+}
+
+#kcal-bub,
+#kcal-bub2,
+#kcal-bub3,
+#kcal-bub4 {
+  color: white;
+}
+
+#ur-lyve-kid {
+  background-color: lime;
+}
+
+#challenges {
+  background-color: red;
+}
+
+#chal-g {
+  margin-top: 50px;
+}
+
+.ch {
+  background-color: lime;
+}
+
+.th {
+  background-color: gold;
+}
+
+#progress {
+  background-color: lime;
+}
+
+.flt {
+  background-color: skyblue;
+  color: white;
+}
+
+#em {
+  color: #1e2125;
 }

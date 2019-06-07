@@ -33,4 +33,12 @@ module.exports = function (app) {
   app.get('/users', function (req, res) {
     res.render('user-manager');
   });
+
+  app.get("/dailygoals", function(req, res) {
+    res.render("dailygoals");
+  });
+
+  app.get("/test2", function(req, res) {
+    res.render("test2");
+  });
 };
