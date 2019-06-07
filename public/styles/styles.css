@@ -278,6 +278,7 @@ li {
 
 .buttons {
   text-align: center;
+  padding: 0px;
   height: 30%;
   width: 100%;
 }
