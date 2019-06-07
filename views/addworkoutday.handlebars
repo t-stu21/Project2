@@ -1,2 +1,228 @@
-{{>addworkoutday}}
-{{>footer}}
+<div class="row">
+    <div class="container-fluid">
+        <div class="app">
+            <div class="row top-container">
+
+                {{>topleft}}
+                <div class="col-lg-2"></div>
+                <div class="alyve col-md-4">
+                    <div class="app-title text-center">
+
+                        <div class="title-text"><span style="font-size: 90px; color: white;">
+                                <i class="fas fa-heartbeat"></i></span>ALYVE</div>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+                {{>topright}}
+
+
+            </div>
+            <div class="row body">
+                <div class="sch" id="goal">
+                    <div class="col-lg-1"></div>
+
+
+
+
+
+                    <div class="col-lg-1"></div>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="container hidden">
+
+
+                    <div class="col-md-2 col-sm-2 wrk">
+                        <a class="btn btn-light form-submit flt" href="/workoutday">Go to WorkoutDay</a>
+                    </div>
+                    <div class="col-md-2 col-sm-2 wrk">
+                        <a class="btn btn-light form-submit flt" href="/users">Manage Users</a>
+                    </div>
+
+
+
+                    <div class="row wrkout">
+                        <div class="col-md-6 offset-md-3">
+                            <form id="addworkout">
+                                <div class="form-group wrkout">
+                                    <div class="form-row wrkout">
+                                        <label for="workout">Workout</label>
+                                        <select class="form-control exercise no-margin text-center wrkout" id="workout"
+                                            required>
+                                            <option value="6">aerobics</option>
+                                            <option value="7">backpacking</option>
+                                            <option value="4.5">badminton (singles)</option>
+                                            <option value="5">baseball</option>
+                                            <option value="6">basketball (half-court)</option>
+                                            <option value="5">bicycling indoors (stationary bike) </option>
+                                            <option value="5.5">bicycling stationary 100 w light effort </option>
+                                            <option value="7">bicycling stationary 150 w moderate effort </option>
+                                            <option value="4">bicycling outdoors &lt; 10 mph leisure</option>
+                                            <option value="6">bicycling outdoors 10 - 11.9 mph leisure light effort
+                                            </option>
+                                            <option value="8">bicycling outdoors 12 - 13.9 mph leisure moderate
+                                                effort</option>
+                                            <option value="10">bicycling outdoors 14 - 15.9 mph fast or visorous
+                                                effort</option>
+                                            <option value="8">calisthenics pushups pullups situps vigorous effort
+                                            </option>
+                                            <option value="4.5">calisthenics home exercise no-margin light or
+                                                moderate effort
+                                            </option>
+                                            <option value="8">conditioning exercise no-margin circuit training
+                                                general
+                                            </option>
+                                            <option value="3">canoeing 2.0 - 3.9 mph light effort</option>
+                                            <option value="5">kayaking</option>
+                                            <option value="6">dancing ballet</option>
+                                            <option value="3">dancing ballroom slow</option>
+                                            <option value="5.5">dancing disco</option>
+                                            <option value="4.5">dancing line</option>
+                                            <option value="5.5">dancing swing</option>
+                                            <option value="5.5">dancing (really kicking up your heels)</option>
+                                            <option value="2.5">dusting</option>
+                                            <option value="5.5">elliptical machine</option>
+                                            <option value="8">football</option>
+                                            <option value="3">frisbee</option>
+                                            <option value="5">gardening</option>
+                                            <option value="5.5">golfing (no carts please) carrying clubs</option>
+                                            <option value="3.5">grocery shopping</option>
+                                            <option value="12">handball</option>
+                                            <option value="6">hiking</option>
+                                            <option value="4.5">home repair (building hammering)</option>
+                                            <option value="2.5">horseback riding </option>
+                                            <option value="3.5">housecleaning</option>
+                                            <option value="8">ice hockey</option>
+                                            <option value="7">ice skating</option>
+                                            <option value="2.3">ironing</option>
+                                            <option value="7">jogging</option>
+                                            <option value="8">running 5 mph ( 12 min mile)</option>
+                                            <option value="10">running 6 mph 10 min mile</option>
+                                            <option value="13.5">running 8 mph 7.5 min mile</option>
+                                            <option value="10">karate</option>
+                                            <option value="10">kickboxing</option>
+                                            <option value="8">lacrosse</option>
+                                            <option value="2">laundry/folding clothes</option>
+                                            <option value="2">making the bed </option>
+                                            <option value="4.5">mopping/scrubbing floors</option>
+                                            <option value="4.5">mowing the lawn (no riding mowers please)</option>
+                                            <option value="5">painting the house</option>
+                                            <option value="6">pilates</option>
+                                            <option value="4">ping pong</option>
+                                            <option value="4">playing with kids at the playground</option>
+                                            <option value="4">playing musical instrument - drums</option>
+                                            <option value="2">playing musical instrument - guitar</option>
+                                            <option value="2.5">playing musical instrument - piano</option>
+                                            <option value="2.5">cooking</option>
+                                            <option value="7">racquetball</option>
+                                            <option value="4">raking</option>
+                                            <option value="6">rearranging furniture</option>
+                                            <option value="11">rock climbing (ascending)</option>
+                                            <option value="8">rock climbing (repelling)</option>
+                                            <option value="7">roller blading/skating</option>
+                                            <option value="8">rope jumping</option>
+                                            <option value="7">rowing</option>
+                                            <option value="10">rugby</option>
+                                            <option value="6">shoveling snow</option>
+                                            <option value="7">sledding</option>
+                                            <option value="8">snow skiing (cross-country)</option>
+                                            <option value="6">snow skiing (downhill)</option>
+                                            <option value="9.5">indoor skiing (on a machine)</option>
+                                            <option value="7">soccer</option>
+                                            <option value="5">softball</option>
+                                            <option value="5">stacking firewood for winter</option>
+                                            <option value="6">stair climbing</option>
+                                            <option value="3">surfing</option>
+                                            <option value="2.5">sweeping (inside)</option>
+                                            <option value="6">swimming</option>
+                                            <option value="10">tae kwon do</option>
+                                            <option value="4">tai chi</option>
+                                            <option value="6">tennis (doubles)</option>
+                                            <option value="8">tennis (singles)</option>
+                                            <option value="2.5">vacuuming</option>
+                                            <option value="8">volleyball (beach)</option>
+                                            <option value="3">volleyball (casual game)</option>
+                                            <option value="4">walking (briskly)</option>
+                                            <option value="4">walking to work or class leisure</option>
+                                            <option value="2.5">walking pushing a stroller</option>
+                                            <option value="3.5">walking with the dog</option>
+                                            <option value="4.5">washing the car </option>
+                                            <option value="2.3">washing the dishes</option>
+                                            <option value="4.5">washing windows</option>
+                                            <option value="4">water aerobics </option>
+                                            <option value="10">water polo</option>
+                                            <option value="6">water skiing</option>
+                                            <option value="3">weight lifting</option>
+                                            <option value="5">whitewater rafting </option>
+                                            <option value="4">yoga hatha</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Please provide height in feet.
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-6 mb-6">
+                                            <label for="calories-in">Calories In</label>
+                                            <select class="form-control exercise no-margin text-center"
+                                                id="calories-in wrkout" required>
+                                                <option>100</option>
+                                                <option>200</option>
+                                                <option>300</option>
+                                                <option>400</option>
+                                                <option selected>500</option>
+                                                <option>600</option>
+                                                <option>700</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6 mb-6">
+                                            <label for="calories-out wrkout">Calories Out</label>
+                                            <select class="form-control exercise no-margin text-center"
+                                                id="calories-out" required>
+                                                <option>10</option>
+                                                <option>20</option>
+                                                <option>30</option>
+                                                <option>40</option>
+                                                <option selected>50</option>
+                                                <option>60</option>
+                                                <option>70</option>
+                                                <option>80</option>
+                                                <option>90</option>
+                                                <option>100</option>
+                                                <option>110</option>
+                                                <option>120</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="duration">Workout Duration</label>
+                                        <select class="form-control exercise no-margin text-center" id="duration"
+                                            required>
+                                            <option>10</option>
+                                            <option>20</option>
+                                            <option>30</option>
+                                            <option>40</option>
+                                            <option selected>50</option>
+                                            <option>60</option>
+                                            <option>70</option>
+                                            <option>80</option>
+                                            <option>90</option>
+                                            <option>100</option>
+                                            <option>110</option>
+                                            <option>120</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="category">Select User:</label>
+                                        <select class="custom-select exercise no-margin text-center" id="user">
+                                        </select>
+                                    </div>
+                                    <br />
+                                    <button type="submit" class="btn btn-success form-submit"
+                                        id="addworkout">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    {{>footer}}

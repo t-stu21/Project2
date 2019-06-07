@@ -3,35 +3,50 @@
     <div class="row">
         <div class="container-fluid">
             <div class="app">
-                <div class="header">
-                    <div class="fat-burning">
-                        <span class="title">
-                            Todays Result
-                        </span>
-                        <span class="result">
-                            <span class="num">0000{{example.id}}</span>
-                            <span class="unit">
-                                Kcal
+                <div class="row top-container">
+
+                    <div class="circle-shape col-lg-2">
+                        <div class="circle-text text-center">
+                            <span class="title" id="kcal-title">
+                                Todays Result
                             </span>
-                        </span>
-                    </div>
-                    <a href="/"><span style="font-size: 90px; color: lime;">
-                            <i class="fas fa-heartbeat"></i>
-                        </span></i></a>
-                    <div class="user-attendance">
-                        <span class="title text-center goal">
-                            Daily Goal
-                        </span>
-                        <span class="result">
-                            <span class="num" id="goal">0000{{example.id}}</span>
-                            <span class="unit" id="goal-unit">
-                                Kcal
+                            <span class="result">
+                                <span class="num" id="kcal-today">
+                                    <h1 id="circle-numbers">0000</h1>
+                                </span>
+                                <span class="unit" id="kcal">
+                                    Kcal
+                                </span>
                             </span>
-                        </span>
+                        </div>
                     </div>
-                </div>
-                <div class="app-title">
-                    <div class="title-text text-center">Alyve</div>
+                    <div class="col-lg-2"></div>
+                    <div class="alyve col-md-4">
+                        <div class="app-title text-center">
+
+                            <div class="title-text"><span style="font-size: 90px; color: white;">
+                                    <i class="fas fa-heartbeat"></i></span>ALYVE</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2"></div>
+                    <div class="circle-shape col-lg-2">
+                        <div class="circle-text text-center">
+                            <span class="title" id="kcal-title">
+                                Goal:
+                            </span>
+                            <span class="result">
+                                <span class="num" id="kcal-today">
+                                    <h1 id="circle-numbers">0000</h1>
+                                </span>
+                                <span class="unit" id="kcal">
+                                    Kcal
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+
+
+
                 </div>
                 <div class="body">
                     <div class="attendance" id="goal">
