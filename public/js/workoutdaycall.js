@@ -56,7 +56,7 @@ $(document).ready(function() {
           dayChk.push(itemDateStr);
 
           if (currentDateString == itemDateStr) {
-            totalCalories = +data[i].caloriesin;
+            totalCalories = totalCalories + data[i].caloriesin;
             console.log(totalCalories);
           }
         }
