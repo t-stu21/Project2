@@ -8,7 +8,10 @@ body {
 
 body {
   font-family: "Exo", sans-serif;
-  background: #000;
+  background-image: url("/img/barbell-building-challenge-1552252.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -286,7 +289,7 @@ li {
 #kcal-title,
 #kcal,
 .goal {
-  color: white;
+  color: black;
 }
 
 .graph-knob-mt-100 {
@@ -483,7 +486,6 @@ select {
 .col-md-6 {
   background-color: lime;
   color: white;
-  border-radius: 25% 25% 25% 25%;
   width: 100%;
 }
 .col-md-3 > select {
@@ -563,7 +565,7 @@ img {
 
 .alyve {
   border-radius: 50%;
-  background-color: skyblue;
+  background-color: lime;
 }
 
 .num {
@@ -765,4 +767,10 @@ body {
     display: flex;
     align-items: center;
   }
+}
+
+.title,
+.circle-numbers {
+  font-family: "Abel", sans-serif;
+  color: black;
 }
