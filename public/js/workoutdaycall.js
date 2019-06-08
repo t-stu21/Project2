@@ -1,5 +1,12 @@
 $(document).ready(function() {
   // var scheduleTemplate = $("#schedule-template").html();
+  $(document).on('click', 'body *', function() {
+    $('#btm-btn').attr('href', `/?user_id=${grabID()}`);
+    $('#indexalyvelink').attr('href', `/?user_id=${grabID()}`);
+    $('#indexgolyvelink').attr('href', `/addworkout?user_id=${grabID()}`);
+    $('#indexprogresslink').attr('href', `/workoutday?user_id=${grabID()}`);
+    $('#workoutdaylogolink').attr('href', `/?user_id=${grabID()}`);
+  });
 
   // var compileScheduleTemplate = Handlebars.compile(scheduleTemplate);
 
@@ -8,18 +15,10 @@ $(document).ready(function() {
   // console.log(scheduleTemplate);
 
   function arg_calCalc(calcGender, calcWeight, calcHeight, calcAge) {
-    if (calcGender === "Male") {
-      return (
-        66 +
-        (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 -
-        700
-      ).toFixed(0);
-    } else if (calcGender === "Female") {
-      return (
-        655 +
-        (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 -
-        500
-      ).toFixed(0);
+    if (calcGender === 'Male') {
+      return (66 + (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 - 700).toFixed(0);
+    } else if (calcGender === 'Female') {
+      return (655 + (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 - 500).toFixed(0);
     }
   }
 
@@ -83,15 +82,15 @@ $(document).ready(function() {
   let grabID = () => {
     let userID = 0;
     let url = window.location.search;
-    if (url.indexOf("?user_id=") !== -1) {
-      let uid = url.split("=")[1];
+    if (url.indexOf('?user_id=') !== -1) {
+      let uid = url.split('=')[1];
       userID = parseInt(uid);
     }
     return userID;
   };
 
   let findUser = () => {
-    $.get("/api/users", function(data) {
+    $.get('/api/users', function(data) {
       try {
         let u;
         for (var i = 0; i < data.length; i++) {
@@ -100,21 +99,21 @@ $(document).ready(function() {
             u = data[i];
           }
         }
-        console.log("u: ", u);
+        console.log('u: ', u);
         let calOut = u.WorkoutDays[0].caloriesout;
         let daily = u.WorkoutDays.length;
         let wrkTime = u.WorkoutDays[0].duration;
         let wrknum = u.WorkoutDays[0].workout.length;
         let dlyCals = u.goal_weight;
         console.log(u.WorkoutDays);
-        $("#ch4").html(dlyCals);
-        $("#ch3").html(wrknum);
-        $("#ch2").html(wrkTime);
-        $("#ch1").html(daily);
-        $("#topL").html(calOut);
-        $("#topR").html(u.daily_cals);
+        $('#ch4').html(dlyCals);
+        $('#ch3').html(wrknum);
+        $('#ch2').html(wrkTime);
+        $('#ch1').html(daily);
+        $('#topL').html(calOut);
+        $('#topR').html(u.daily_cals);
       } catch {
-        console.log("Undefined User");
+        console.log('Undefined User');
       }
       //return u;
     });
