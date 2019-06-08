@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // var scheduleTemplate = $("#schedule-template").html();
 
   // var compileScheduleTemplate = Handlebars.compile(scheduleTemplate);
@@ -92,7 +92,7 @@ $(document).ready(function() {
   };
 
   let findUser = () => {
-    $.get("/api/users", function(data) {
+    $.get("/api/users", function (data) {
       try {
         let u;
         for (var i = 0; i < data.length; i++) {
