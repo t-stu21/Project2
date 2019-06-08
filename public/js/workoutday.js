@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   /* global moment */
 
   // workoutdayContainer holds all of our workoutdays
@@ -29,7 +29,7 @@ $(document).ready(function() {
     if (userId) {
       userId = '/?user_id=' + userId;
     }
-    $.get('/api/workoutdays' + userId, function(data) {
+    $.get('/api/workoutdays' + userId, function (data) {
       console.log('WorkoutDays', data);
       workoutdays = data;
       if (!workoutdays || !workoutdays.length) {
@@ -45,7 +45,7 @@ $(document).ready(function() {
     $.ajax({
       method: 'DELETE',
       url: '/api/workoutdays/' + id
-    }).then(function() {
+    }).then(function () {
       getWorkoutDays(workoutdayCategorySelect.val());
     });
   }
@@ -143,7 +143,7 @@ $(document).ready(function() {
   // to create an user first
   function renderUserList(data) {
     if (!data.length) {
-      window.location.href = '/users';
+      window.location.href = '/workoutday';
     }
     $('.hidden').removeClass('hidden');
     var rowsToAdd = [];
