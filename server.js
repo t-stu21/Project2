@@ -6,7 +6,7 @@ var bodyParser = require("body-parser");
 // var env = require('dotenv').load();
 var exphbs = require("express-handlebars");
 var user = require("./models/user.js");
-var pport = require("./config/passport/passport.js");
+var port = require("./config/passport/passport.js");
 
 //models
 var models = require("./models");
