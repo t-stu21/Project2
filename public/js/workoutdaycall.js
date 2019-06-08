@@ -78,7 +78,6 @@ $(document).ready(function() {
     if (url.indexOf('?user_id=') !== -1) {
       let uid = url.split('=')[1];
       userID = parseInt(uid);
-      USERID = userID;
     }
     return userID;
   };

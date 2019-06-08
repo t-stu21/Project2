@@ -10,8 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     caloriesout: {
       type: DataTypes.INTEGER
-      // allowNull: false
-      // len: [1]
     },
     date: {
       type: DataTypes.INTEGER
