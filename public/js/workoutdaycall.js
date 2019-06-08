@@ -1,5 +1,12 @@
 $(document).ready(function() {
   // var scheduleTemplate = $("#schedule-template").html();
+  $(document).on("click", "body *", function() {
+    $("#btm-btn").attr("href", `/?user_id=${grabID()}`);
+    $("#alyvenavlink").attr("href", `/?user_id=${grabID()}`);
+    $("#indexgolyvelink").attr("href", `/addworkout?user_id=${grabID()}`);
+    $("#indexprogresslink").attr("href", `/workoutday?user_id=${grabID()}`);
+    $("#workoutdaygotolink").attr("href", `/workoutday?user_id=${grabID()}`);
+  });
 
   // var compileScheduleTemplate = Handlebars.compile(scheduleTemplate);
 
@@ -83,7 +90,16 @@ $(document).ready(function() {
   let grabID = () => {
     let userID = 0;
     let url = window.location.search;
-    if (url.indexOf("?user_id=") !== -1) {
+    if (url.indexOf("/addworkout?workoutday_id=") !== -1) {
+      let uid = url.split("=")[1];
+      userID = parseInt(uid);
+    } else if (url.indexOf("/addworkout?user_id=") !== -1) {
+      let uid = url.split("=")[1];
+      userID = parseInt(uid);
+    } else if (url.indexOf("/workoutday?user_id=") !== -1) {
+      let uid = url.split("=")[1];
+      userID = parseInt(uid);
+    } else if (url.indexOf("?user_id=") !== -1) {
       let uid = url.split("=")[1];
       userID = parseInt(uid);
     }
@@ -100,13 +116,13 @@ $(document).ready(function() {
             u = data[i];
           }
         }
-        console.log("u: ", u);
-        let calOut = u.daily_cals;
+        //console.log('u: ', u);
+        let calOut = u.WorkoutDays[0].caloriesout;
         let daily = u.WorkoutDays.length;
         let wrkTime = u.WorkoutDays[0].duration;
         let wrknum = u.WorkoutDays[0].workout.length;
         let dlyCals = u.goal_weight;
-        console.log(calOut);
+        //console.log(u.WorkoutDays);
         $("#ch4").html(dlyCals);
         $("#ch3").html(wrknum);
         $("#ch2").html(wrkTime);
