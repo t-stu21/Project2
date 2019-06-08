@@ -25,22 +25,24 @@ $(document).ready(function() {
     $.get('/api/workouts' + userID, function(data) {
       console.log('Workouts', data);
       workouts = data;
-      if (!workouts || !workouts.lenght) {
+      if (!workouts || !workouts.length) {
         displayEmpty(user);
+        console.log('empty');
       } else {
+        console.log('users');
         initializeRows();
       }
     });
   }
 
-  function deleteWorkout(id) {
-    $.ajax({
-      method: 'DELETE',
-      url: '/api/workouts/' + id
-    }).then(function() {
-      getWorkouts(intensityLevel.val());
-    });
-  }
+  //   function deleteWorkout(id) {
+  //     $.ajax({
+  //       method: 'DELETE',
+  //       url: '/api/workouts/' + id
+  //     }).then(function() {
+  //       getWorkouts(intensityLevel.val());
+  //     });
+  //   }
 
   function initializeRows() {
     workoutContainer.empty();
