@@ -101,7 +101,7 @@ $(document).ready(function() {
           }
         }
         console.log("u: ", u);
-        let calIn = u.WorkoutDays[0].caloriesin;
+        let calOut = u.WorkoutDays[0].caloriesout;
         let daily = u.WorkoutDays.length;
         let wrkTime = u.WorkoutDays[0].duration;
         let wrknum = u.WorkoutDays[0].workout.length;
@@ -111,7 +111,7 @@ $(document).ready(function() {
         $("#ch3").html(wrknum);
         $("#ch2").html(wrkTime);
         $("#ch1").html(daily);
-        $("#topL").html(calIn);
+        $("#topL").html(calOut);
         $("#topR").html(u.daily_cals);
       } catch {
         console.log("Undefined User");
