@@ -4,14 +4,14 @@
         <div class="app">
             <div class="row top-container">
 
-                <div class="circle-shape col-lg-2">
+                <div class="circle-shape col-sm-2">
                     <div class="circle-text text-center">
                         <span class="title" id="kcal-title">
                             Todays Result
                         </span>
                         <span class="result">
                             <span class="num" id="kcal-today">
-                                <h1 id="circle-numbers">0000</h1>
+                                <h1 id="circle-numbers">0000{{results.number}}</h1>
                             </span>
                             <span class="unit" id="kcal">
                                 Kcal
@@ -19,7 +19,7 @@
                         </span>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
+                <div class="col-sm-2"></div>
                 <div class="alyve col-md-4">
                     <div class="app-title text-center">
 
@@ -27,15 +27,15 @@
                                 <i class="fas fa-heartbeat"></i></span>ALYVE</div>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
-                <div class="circle-shape col-lg-2">
+                <div class="col-sm-2"></div>
+                <div class="circle-shape col-sm-2">
                     <div class="circle-text text-center">
                         <span class="title" id="kcal-title">
                             Goal:
                         </span>
                         <span class="result">
                             <span class="num" id="kcal-today">
-                                <h1 id="circle-numbers">0000</h1>
+                                <h1 id="circle-numbers">0000{{results.number}}</h1>
                             </span>
                             <span class="unit" id="kcal">
                                 Kcal
@@ -43,36 +43,13 @@
                         </span>
                     </div>
                 </div>
-
-                <div class="container workoutday text-center">
-                    <div class="row">
-                        <div class="food-input"></div>
-                        <div class="col-md-2 col-sm-2">
-                            <a class="btn btn-light form-submit wrk" href="/addworkout">Add Food</a>
-                        </div>
-                        <div class="col-md-2 col-sm-2">
-                            <div class="food-input"></div>
-                            <a class="btn btn-light form-submit wrk" href="/users">Add Workout</a>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 workoutday-container"></div>
-                    </div>
-                </div>
-                <!-- Custom Script -->
-
             </div>
-
-
-            <div class="row">
-                <div class="col-md-2 col-sm-2">
-                    <a class="btn btn-light form-submit wrk" href="/addworkout">New WorkoutDay</a>
+            <div class="row" id="workoutSummary">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="workoutSumDiv">
                 </div>
-                <div class="col-md-2 col-sm-2">
-                    <a class="btn btn-light form-submit wrk" href="/users">Manage Users</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12 workoutday-container"></div>
+                <div class="col-sm-2"></div>
             </div>
         </div>
+    </div>
+    <script src="./js/workoutdisplay.js" type="text/javascript"></script>

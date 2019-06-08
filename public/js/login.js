@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         function loginNow(loginData) {
             $.post('/login', loginData).then(() => {
-                window.location.href = "/"
+                window.location.href = "/user_id=3"
             });
         }
 
