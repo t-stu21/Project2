@@ -760,6 +760,11 @@ body {
   color: white !important;
 }
 
+#btm-btn {
+  width: 100%;
+  background-color: skyblue;
+}
+
 @media (max-width: 992px) {
   body {
     background-image: none;

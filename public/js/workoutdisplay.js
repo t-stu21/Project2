@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   var workoutContainer = $('.workout-container');
   var intensityLevel = $('level');
@@ -129,3 +130,4 @@ $(document).ready(function() {
   // html += "</table>";
   // $("div").html(html);
 });
+

@@ -2,10 +2,14 @@
   "development": {
     "username": "root",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "password": "passpass",
 =======
     "password": "GrootRoot127",
 >>>>>>> 5f9b85b87b03f84c5051355fbb14e746a98be6b3
+=======
+    "password": "password",
+>>>>>>> 87ffd14b58a04b3ca1f2768525425eb37d886dfc
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql"
@@ -13,10 +17,14 @@
   "test": {
     "username": "root",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "password": "passpass",
 =======
     "password": "GrootRoot127",
 >>>>>>> 5f9b85b87b03f84c5051355fbb14e746a98be6b3
+=======
+    "password": "password",
+>>>>>>> 87ffd14b58a04b3ca1f2768525425eb37d886dfc
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql",
