@@ -1,21 +1,21 @@
 $(document).ready(function() {
   // Getting jQuery references to the workoutday body, title, form, and user select
-  //var bodyInput = $("#body");
-  var addworkoutForm = $('#addworkout');
+  //let bodyInput = $("#body");
+  let addworkoutForm = $('#addworkout');
   let userSelect = $('#user');
-  let caloriesInSelect = $('#calories-in');
-  let caloriesOutSelect = $('#calories-out');
+
   let workoutSelect = $('#workout');
   let durationInput = $('#duration');
 
   // Adding an event listener for when the form is submitted
-  $(addworkoutForm).on('submit', handleFormSubmit);
+  $(document).on('submit', '#addworkout', handleWorkoutFormSubmit);
+
   // Gets the part of the url that comes after the "?" (which we have if we're updating a workoutday)
-  var url = window.location.search;
-  var workoutdayId;
+  let url = window.location.search;
+  let workoutdayId;
   let userId;
   // Sets a flag for whether or not we're updating a workoutday to be false initially
-  var updating = false;
+  let updating = false;
 
   // If we have this section in our url, we pull out the workoutday id from the url
   // In '?workoutday_id=1', workoutdayId is 1
@@ -32,25 +32,18 @@ $(document).ready(function() {
   getUsers();
 
   // A function for handling what happens when the form to create a new workoutday is submitted
-  function handleFormSubmit(event) {
+  function handleWorkoutFormSubmit(event) {
     event.preventDefault();
     // Wont submit the workoutday if we are missing a body, title, or user
-    if (
-      !caloriesInSelect.val().trim() ||
-      !caloriesOutSelect.val().trim() ||
-      !workoutSelect.val().trim() ||
-      !durationInput.val().trim() ||
-      //!bodyInput.val().trim() ||
-      !userSelect.val().trim()
-    ) {
+    if (!workoutSelect.val().trim() || !durationInput.val().trim() || !userSelect.val().trim()) {
       console.log('Error with NULL values');
       return;
     }
+    //TODO add caloriesout maybe for dummy data
     // Constructing a newWorkoutDay object to hand to the database
-    var newWorkoutDay = {
-      caloriesin: caloriesInSelect.val().trim(),
-      caloriesout: caloriesOutSelect.val().trim(),
-      workout: workoutSelect.val().trim(),
+    let newWorkoutDay = {
+      caloriesin: workoutSelect.val().trim(),
+      workout: workoutSelect.find('option:selected').text(),
       duration: durationInput.val().trim(),
       UserId: userSelect.val()
     };
@@ -74,7 +67,7 @@ $(document).ready(function() {
 
   // Gets workoutday data for the current workoutday if we're editing, or if we're adding to an user's existing workoutdays
   function getWorkoutDayData(id, type) {
-    var queryUrl;
+    let queryUrl;
     switch (type) {
       case 'workoutday':
         queryUrl = '/api/workoutdays/' + id;
@@ -89,8 +82,8 @@ $(document).ready(function() {
       if (data) {
         console.log(data.UserId || data.id);
         // If this workoutday exists, prefill our addworkout forms with its data
-        //////titleInput.val(data.title);
-        ///////bodyInput.val(data.body);
+        workoutSelect.val(data.workout);
+        durationInput.val(data.duration);
         userId = data.UserId || data.id;
         // If we have a workoutday with this id, set a flag for us to know to update the workoutday
         // when we hit submit
@@ -110,20 +103,18 @@ $(document).ready(function() {
       // window.location.href = '/users';
     }
     $('.hidden').removeClass('hidden');
-    var rowsToAdd = [];
-    for (var i = 0; i < data.length; i++) {
+    let rowsToAdd = [];
+    for (let i = 0; i < data.length; i++) {
       rowsToAdd.push(createUserRow(data[i]));
     }
     userSelect.empty();
-    console.log('rowsToAdd: ' + rowsToAdd);
-    console.log('userSelect: ' + userSelect);
     userSelect.append(rowsToAdd);
     userSelect.val(userId);
   }
 
   // Creates the user options in the dropdown
   function createUserRow(user) {
-    var listOption = $('<option>');
+    let listOption = $('<option>');
     listOption.attr('value', user.id);
     listOption.text(user.name);
     return listOption;
