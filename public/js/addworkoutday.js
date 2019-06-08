@@ -39,7 +39,7 @@ $(document).ready(function() {
       console.log('Error with NULL values');
       return;
     }
-
+    //TODO add caloriesout maybe for dummy data
     // Constructing a newWorkoutDay object to hand to the database
     let newWorkoutDay = {
       caloriesin: workoutSelect.val().trim(),
