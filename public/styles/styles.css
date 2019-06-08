@@ -1,3 +1,921 @@
-.list-group-item {
-  line-height: 2.5;
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  font-family: "Exo", sans-serif;
+  background-image: url("/img/barbell-building-challenge-1552252.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.header > div {
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 13px;
+  padding-top: 15px;
+}
+
+.user-attendance {
+  right: 35px;
+}
+
+img.user-img {
+  margin-top: 10px;
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  border: 4px solid #f6554d;
+}
+
+.header > div > span.title {
+  display: block;
+}
+
+.header > div > span.result span {
+  display: block;
+}
+
+.header > div > span.result .num {
+  font-family: "Exo", sans-serif;
+  font-size: 80px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+.header > div > span.result .unit {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.body {
+  margin-top: 20px;
+}
+
+.body .attendance .title {
+  margin-left: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  text-transform: uppercase;
+}
+
+.body .attendance ul {
+  margin-top: 100px;
+  margin-right: 25px;
+}
+
+.body .attendance ul li {
+  float: left;
+  list-style: none;
+  width: 14.28571428571429%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.body .attendance ul li span.date {
+  display: block;
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.body .attendance ul li span.circle {
+  width: 12px;
+  height: 12px;
+  display: block;
+  margin: 10px auto;
+  border-radius: 100%;
+  border: 5px solid transparent;
+}
+
+.body .attendance ul li span.circle.absent {
+  border: 5px solid #554f52;
+}
+
+.body .attendance ul li span.circle.present {
+  border: 5px solid #f6554d;
+}
+
+.body .attendance ul li span.circle.off {
+  background: #554f52;
+  border: 5px solid #554f52;
+}
+
+.body .attendance ul li span.circle.present + span {
+  color: #f6554d;
+}
+
+.body .attendance:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.body .stats {
+  position: relative;
+  top: 45px;
+  height: 60px;
+}
+
+.body .stats .monthly-stats span {
+  position: absolute;
+}
+
+.body .stats .monthly-stats .title {
+  left: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.body .stats .monthly-stats .title .caption {
+  padding-top: 5px;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.body .stats .monthly-stats .rank {
+  right: 12px;
+  font-family: "Exo", sans-serif;
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 1.5px;
+  margin-top: -7px;
+}
+
+.body .stats .monthly-stats .rank .caption {
+  font-family: Roboto, sans-serif;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  letter-spacing: 0;
+  right: 0;
+  margin-top: -5px;
+}
+
+.body .stats.highlight {
+  background: #f6554d;
+  padding-top: 20px;
+  margin-top: -10px;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  box-shadow: inset 0 15px 25px -5px rgba(0, 0, 0, 0.25),
+    inset 0 -15px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.body .stats.highlight * {
+  color: #fff !important;
+}
+
+.graph ul {
+  margin-top: 200px;
+}
+
+.graph ul li {
+  text-align: center;
+  float: left;
+  list-style: none;
+  width: 16.66666666666667%;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 12px;
+}
+
+.graph ul li:before {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 130px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.7);
+  margin-top: -135px;
+  margin-left: 6px;
+  box-shadow: inset 0 20px 15px -10px #1e2125;
+}
+
+.graph ul li:after {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: rgba(246, 85, 77, 0.9);
+  border-radius: 100%;
+  border: 3px solid rgba(255, 255, 255, 0.9);
+  margin-left: -16px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.15),
+    0 0 0 10px rgba(255, 255, 255, 0.1), 1.5px 1.5px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.graph-knob-mt-100:after {
+  margin-top: -100px;
+}
+
+.graph-knob-mt-110:after {
+  margin-top: -110px;
+}
+
+.graph-knob-mt-70:after {
+  margin-top: -70px;
+}
+
+.graph-knob-mt-60:after {
+  margin-top: -95px;
+}
+
+.graph-knob-mt-50:after {
+  margin-top: -50px;
+}
+
+.result {
+  margin: 10px 10px 10px 10px;
+}
+
+li {
+  margin: 10px 0 0 0;
+}
+
+.circle .present > span {
+  width: 30px;
+}
+
+.title-text {
+  font-size: 3em;
+  color: white;
+  font-family: "Abel", sans-serif;
+}
+
+.bottom-buttons {
+  margin: 0 auto;
+  height: 50%;
+  width: 50%;
+  float: left;
+  font-family: "Exo", sans-serif;
+  font-size: 75px;
+  background-color: #1e2125 !important;
+}
+
+.buttons {
+  text-align: center;
+  padding: 0px;
+  height: 30%;
+  width: 100%;
+}
+
+#button1,
+#button2,
+#button3,
+#button4 {
+  color: white !important;
+  margin-top: 40px;
+}
+
+#goal,
+#goal-unit,
+#kcal-today,
+#kcal-title,
+#kcal,
+.goal {
+  color: black;
+}
+
+.graph-knob-mt-100 {
+  color: gold;
+}
+
+.goal-text {
+  color: gold;
+}
+
+.lyve {
+  color: gold;
+}
+.rest {
+  color: skyblue;
+}
+body {
+  background-color: #1e2125 !important;
+}
+
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-signin-heading,
+.checkbox {
+  margin-bottom: 30px;
+}
+
+.checkbox {
+  font-weight: normal;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  box-sizing: 150px;
+}
+
+input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.white-space {
+  min-height: 25%;
+  min-width: 25%;
+}
+
+.card {
+  height: 50%;
+  width: 50%;
+  text-align: center;
+  font-size: 100px;
+  background-color: #1e2125;
+  color: skyblue;
+  float: left;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  margin-top: 25px;
+  margin-bottom: 35px;
+}
+
+.goalsmet {
+  margin-top: 20px;
+  color: gold;
+}
+
+input,
+select {
+  background-color: #1e2125;
+  color: skyblue;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  box-shadow: 0 6px #5f5f5e;
+}
+
+select {
+  margin-top: 10px;
+}
+
+.in-text {
+  color: white;
+}
+
+.form-group {
+  float: left;
+}
+
+.btn-wrap {
+  margin: 10px 0 10px 0;
+}
+
+.calc-text {
+  color: skyblue;
+  margin: 10px 0 10px 0;
+}
+
+#bmi {
+  font-size: 50px;
+  color: lime;
+}
+
+.form-submit {
+  background-color: #1e2125;
+  color: skyblue;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 6px #5f5f5e;
+  margin: 10px 0 10px 0;
+}
+
+.form-submit:hover {
+  box-shadow: 0 4px #5f5f5e;
+  top: 2px;
+}
+
+.form-submit:active {
+  box-shadow: 0 0 #5f5f5e;
+  top: 6px;
+}
+
+.calc-text {
+  margin-top: 10px;
+}
+
+.exercise {
+  background-color: lime;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 10px;
+  box-shadow: 0 6px #5f5f5e;
+}
+
+#button-text {
+  color: lime;
+}
+
+.user {
+  margin-top: 20px;
+  background-color: #1e2125;
+  color: lime;
+}
+
+.exercise {
+  margin-top: 50px;
+  background-color: #1e2125;
+  color: lime;
+  float: left;
+}
+
+.plus {
+  color: lime;
+}
+
+.backdrop {
+  background-color: #1e2125;
+}
+
+.offset-md-3,
+.col-md-6 {
+  background-color: lime;
+  color: white;
+  width: 100%;
+}
+.col-md-3 > select {
+  background-color: #1e2125;
+  color: lime;
+}
+
+.col-md-3 > input {
+  background-color: #1e2125;
+  color: lime;
+}
+
+.col-md-6 > select {
+  background-color: #1e2125;
+  color: lime;
+}
+
+.col-md-6 > input {
+  background-color: #1e2125;
+  color: lime;
+}
+
+.input-group > input {
+  background-color: #1e2125;
+  color: lime;
+}
+
+.form-check-label {
+  color: lime;
+}
+
+.header-signup {
+  margin: 20px 0 20px 0;
+}
+label {
+  margin-top: 5px;
+}
+
+#user,
+#addworkout {
+  float: right;
+}
+
+#user {
+  margin-top: 0px;
+}
+
+.no-margin {
+  margin-top: 2px;
+  margin-bottom: 10px;
+}
+
+.wrk {
+  margin: 0 auto;
+  padding: 0px;
+}
+
+.bottom-buttons {
+  margin-top: 0px;
+  border-radius: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.top-container {
+  background-color: #1e2125;
+  bottom: 30px;
+}
+
+.app-img {
+  margin-right: 0px;
+}
+
+img {
+  background-color: #1e2125;
+}
+
+.alyve {
+  border-radius: 50%;
+  background-color: lime;
+}
+
+.num {
+  color: skyblue;
+}
+
+.header {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.circle-text {
+  margin-top: 17%;
+}
+
+#circle-numbers {
+  font-size: 4.2em;
+  color: white;
+}
+
+.circle-shape {
+  max-height: 192.35px;
+  max-width: 15%;
+  background-color: skyblue;
+  border-radius: 50%;
+}
+
+.top-container {
+  margin: 10px 0px 0 70px;
+}
+
+.title-text {
+  color: white;
+}
+
+.alyve {
+  max-height: 779.438px;
+  max-width: 30%;
+  border-radius: 25% 25% 25% 25%;
+}
+
+.results-card {
+  min-height: 216px;
+  border-radius: 50%;
+  background-color: lime;
+  margin-left: 120px;
+}
+
+#gl,
+#as {
+  font-size: 25px;
+  color: white;
+}
+
+#ten,
+#tfe {
+  font-size: 50px;
+  color: white;
+}
+
+.card-txt {
+  margin-top: 50px;
+}
+
+.top-bubbles {
+  background-color: #1e2125;
+  margin-right: 10px;
+}
+
+.bubble-shape {
+  min-height: 192.35px;
+  max-width: 15%;
+  border-radius: 50%;
+  background-color: lime;
+}
+.bubble-text {
+  margin-top: 17%;
+}
+
+#bubble-numbers {
+  font-size: 4.2em;
+  color: white;
+}
+
+#kcal-bub,
+#kcal-bub2,
+#kcal-bub3,
+#kcal-bub4 {
+  color: white;
+}
+
+#ur-lyve-kid {
+  background-color: lime;
+}
+
+#challenges {
+  background-color: red;
+}
+
+#chal-g {
+  margin-top: 50px;
+}
+
+.ch {
+  background-color: lime;
+}
+
+.th {
+  background-color: gold;
+}
+
+#progress {
+  background-color: lime;
+}
+
+.flt {
+  background-color: skyblue;
+  color: white;
+}
+
+#em {
+  color: #1e2125;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.circle-container {
+  width: 200px;
+  margin: 0 auto;
+}
+.circle-multiline {
+  display: table-cell;
+  text-align: center;
+  height: 200px;
+  width: 200px;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: white;
+  background-color: skyblue;
+  background: radial-gradient(circle at 50px 50px, lime, #000);
+}
+
+.rectangle-container {
+  width: 260px;
+  margin: 0 auto;
+}
+
+.rectangle-multiline {
+  display: table-cell;
+  text-align: center;
+  height: 75px;
+  width: 260px;
+  vertical-align: middle;
+  color: white;
+  border-radius: 15%;
+  background-color: skyblue;
+}
+
+.rectangle-multiline a {
+  color: white;
+}
+
+.green-bkgrd {
+  background-color: lime !important;
+}
+
+.red-bkgrd {
+  background-color: red !important;
+}
+
+.gold-bkgrd {
+  background-color: gold !important;
+  background: radial-gradient(circle at 50px 50px, yellow, #000);
+}
+
+.blue-bckgrnd {
+  background: radial-gradient(circle at 50px 50px, skyblue, #000);
+}
+
+.container-fluid {
+  height: 100%;
+  padding-bottom: 10px;
+}
+
+#button3 {
+  color: white !important;
+}
+
+#btm-btn,
+#btm-btn2 {
+  width: 100%;
+  background-color: skyblue;
+}
+
+@media (max-width: 992px) {
+  body {
+    background-image: none;
+    background-color: #1e2125;
+  }
+  #chal-g {
+    margin-top: 10px;
+  }
+
+  .shapes {
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 992px) {
+  .home-sections {
+    margin-top: 20px;
+  }
+  .home-nav-btn-columns {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.title,
+.circle-numbers {
+  font-family: "Abel", sans-serif;
+  color: black;
+}
+
+label {
+  font-family: "Abel", sans-serif;
+  color: white;
+}
+
+.bounce-in-top {
+  -webkit-animation: bounce-in-top 1.1s both;
+  animation: bounce-in-top 1.1s both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2019-6-7 22:13:47
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation bounce-in-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+    transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes bounce-in-top {
+  0% {
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+  55% {
+    -webkit-transform: translateY(-65px);
+    transform: translateY(-65px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  72% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  81% {
+    -webkit-transform: translateY(-28px);
+    transform: translateY(-28px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  90% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  95% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
 }

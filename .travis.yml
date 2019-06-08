@@ -1,10 +1,24 @@
 language: node_js
 node_js: "8"
-branches:
-  only:
-  - master
 cache:
-  directories:
-    - node_modules
-before_install:
+directories:
+    - "node_modules"
+install:
+  - npm install
+services:
+  - mysql
+
+env:
+  global:
+  - NODE_ENV=test
+
+before_script:
   - mysql -e 'CREATE DATABASE testdb;'
+  - npm install -g sequelize-cli
+  - npm install mysql2 -g
+  - sequelize db:migrate
+script:
+  - npm test
+after_success:
+  - npm run coverage
+
