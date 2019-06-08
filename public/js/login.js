@@ -1,6 +1,5 @@
 $(document).ready(function () {
-
-    console.log('login test');
+    //console.log('login test');
 
     let emailInput = $('#email');
     let passwordInput = $('#password');
@@ -28,18 +27,14 @@ $(document).ready(function () {
             password: passwordInput.val().trim()
         };
 
-        console.log('loginData', loginData);
+        //console.log('loginData', loginData);
 
         loginNow(loginData);
 
         function loginNow(loginData) {
-            $.post('/login', loginData).then(() => {
-                window.location.href = "/user_id=3"
+            $.post('/login', loginData).then(data => {
+                window.location.href = `/?user_id=${data.id}`;
             });
         }
-
     }
-
-
-
-})
+});
