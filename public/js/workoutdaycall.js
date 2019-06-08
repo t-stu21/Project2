@@ -104,7 +104,13 @@ $(document).ready(function() {
         console.log("u: ", u);
         let calIn = u.WorkoutDays[0].caloriesin;
         let daily = u.WorkoutDays.length;
-
+        let wrkTime = u.WorkoutDays[0].duration;
+        let wrknum = u.WorkoutDays[0].workout;
+        let dlyCals = u.goal_weight;
+        console.log(u.WorkoutDays);
+        $("#ch4").html(dlyCals);
+        $("#ch3").html(wrknum);
+        $("#ch2").html(wrkTime);
         $("#ch1").html(daily);
         $("#topL").html(calIn);
         $("#topR").html(u.daily_cals);
