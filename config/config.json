@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "GrootRoot127",
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "GrootRoot127",
     "database": "fitness_db",
     "host": "localhost",
     "dialect": "mysql",
