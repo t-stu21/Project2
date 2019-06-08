@@ -1,74 +1,58 @@
-<div class="row signup">
-    <div class="container-fluid">
-        <div class="app">
-            <div class="row top-container">
+<div class="container-fluid">
+    <div class="app">
 
-                <div class="circle-shape col-lg-2">
-                    <div class="circle-text text-center">
-                        <span class="title" id="kcal-title">
-                            Todays Result
-                        </span>
-                        <span class="result">
-                            <span class="num" id="kcal-today">
-                                <h1 id="circle-numbers">0000</h1>
-                            </span>
-                            <span class="unit" id="kcal">
-                                Kcal
-                            </span>
-                        </span>
+
+        <div class="row home-sections">
+            <div class="col-lg-1 col-md-12"></div>
+            {{>logbut}}
+            <div class="col-lg-2 col-md-12"></div>
+
+
+            <div class="col-lg-3 col-md-12 home-nav-btn-columns">
+                <div class="shapes stubborn-margin-hack">
+                    <div class="rectangle-container">
+                        <div class="rectangle-multiline">
+                            <div class="title-text">
+                                <a href="/">
+                                    <span style="color: white;"><i class="fas fa-heartbeat"></i></span>&nbsp;ALYVE
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-2"></div>
-                <div class="alyve col-md-4">
-                    <div class="app-title text-center">
+            </div>
+            <div class="col-lg-1 col-md-12"></div>
+            {{>logbut}}
 
-                        <div class="title-text"><span style="font-size: 90px; color: white;">
-                                <i class="fas fa-heartbeat"></i></span>ALYVE</div>
-                    </div>
-                </div>
-                <div class="col-lg-2"></div>
-                <div class="circle-shape col-lg-2">
-                    <div class="circle-text text-center">
-                        <span class="title" id="kcal-title">
-                            Goal:
-                        </span>
-                        <span class="result">
-                            <span class="num" id="kcal-today">
-                                <h1 id="circle-numbers">0000</h1>
-                            </span>
-                            <span class="unit" id="kcal">
-                                Kcal
-                            </span>
-                        </span>
-                    </div>
-                </div>
+        </div>
 
 
+
+
+        <div class="row">
+            <div class="attendance" id="goal">
 
             </div>
-            <div class="body">
-                <div class="attendance" id="goal">
 
-                </div>
+            <div class="col-lg-4"></div>
+            <div class="wrapper col-md-12 col-lg-4 text-center">
 
+                <form class="form-signin user">
+                    <h4>Not a Member Yet?</h4>
+                    <a href="/signup" type="button11" class="btn btn-success form-submit user">Sign Up!</a>
+                    <h2 class="form-signin-heading user">Member Login</h2>
 
-                <div class="wrapper">
-                    <form class="form-signin user">
-                        <h4>Not a Member Yet?</h4>
-                        <a href="/signup" type="button11" class="btn btn-success form-submit user">Sign Up!</a>
-                        <h2 class="form-signin-heading user">Member Login</h2>
-
-                        <input type="text" id="email" class="form-control user" name="username"
-                            placeholder="Email Address" required="" autofocus="" />
-                        <input type="password" id="password" class="form-control user" name="password"
-                            placeholder="Password" required="" />
-                        {{!-- <label class="checkbox">
+                    <input type="text" id="email" class="form-control user" name="username" placeholder="Email Address"
+                        required="" autofocus="" />
+                    <input type="password" id="password" class="form-control user" name="password"
+                        placeholder="Password" required="" />
+                    {{!-- <label class="checkbox">
       <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
     </label> --}}
-                        <button type="button" id="login" class="btn btn-primary form-submit">Login</button>
-                    </form>
-                </div>
-
-
-
+                    <button type="button" id="login" class="btn btn-primary form-submit">Login</button>
+                </form>
             </div>
+
+
+            <div class="col-lg-4"></div>
+        </div>
