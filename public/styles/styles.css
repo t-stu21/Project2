@@ -711,6 +711,7 @@ body {
   border-radius: 50%;
   color: white;
   background-color: skyblue;
+  background: radial-gradient(circle at 100px 100px, lime, #000);
 }
 
 .rectangle-container {
@@ -735,14 +736,21 @@ body {
 
 .green-bkgrd {
   background-color: lime !important;
+  background: radial-gradient(circle at 50px 50px, lime, #000);
 }
 
 .red-bkgrd {
   background-color: red !important;
+  background: radial-gradient(circle at 50px 50px, red, #000);
 }
 
 .gold-bkgrd {
   background-color: gold !important;
+  background: radial-gradient(circle at 50px 50px, yellow, #000);
+}
+
+.blue-bckgrnd {
+  background: radial-gradient(circle at 50px 50px, skyblue, #000);
 }
 
 .container-fluid {
