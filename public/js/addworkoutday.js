@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
   // Getting jQuery references to the workoutday body, title, form, and user select
   //let bodyInput = $("#body");
   let addworkoutForm = $('#addworkout');
@@ -49,7 +49,7 @@ $(document).ready(function () {
       if (intensity < 3) {
         return (time * 6).toFixed(0);
       } else if (3 < intensity < 7) {
-        return (time * 8).toFixed(0)
+        return (time * 8).toFixed(0);
       } else {
         return (time * 10).toFixed(0);
       }
@@ -64,7 +64,7 @@ $(document).ready(function () {
       UserId: userSelect.val()
     };
 
-    console.log(newWorkoutDay);
+    // console.log(newWorkoutDay);
 
     // If we're updating a workoutday run updateWorkoutDay to update a workoutday
     // Otherwise run submitWorkoutDay to create a whole new workoutday
@@ -78,10 +78,14 @@ $(document).ready(function () {
 
   // Submits a new workoutday and brings user to workoutday page upon completion
   function submitWorkoutDay(workoutday) {
-    $.post('/api/workoutdays', workoutday, function () {
-      window.location.href = '/workoutday';
+    $.post('/api/workoutdays', workoutday, data => {
+      window.location.href = `/workoutday?user_id=${data.UserId}`;
     });
   }
+  //   function submitWorkoutDay(workoutday) {
+  //     $.post('/api/workoutdays', workoutday).then(data => {
+  //     window.location.href = `/workoutday?user_id=${data.id}`;
+  // });
 
   // Gets workoutday data for the current workoutday if we're editing, or if we're adding to an user's existing workoutdays
   function getWorkoutDayData(id, type) {
@@ -96,9 +100,9 @@ $(document).ready(function () {
       default:
         return;
     }
-    $.get(queryUrl, function (data) {
+    $.get(queryUrl, function(data) {
       if (data) {
-        console.log(data.UserId || data.id);
+        //console.log(data.UserId || data.id);
         // If this workoutday exists, prefill our addworkout forms with its data
         workoutSelect.val(data.workout);
         durationInput.val(data.duration);
@@ -144,8 +148,8 @@ $(document).ready(function () {
       method: 'PUT',
       url: '/api/workoutdays',
       data: workoutday
-    }).then(function () {
-      window.location.href = '/workoutday';
+    }).then(function() {
+      window.location.href = `/workoutday?user_id=${workoutday.UserId}`;
     });
   }
 });
