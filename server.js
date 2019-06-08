@@ -8,6 +8,9 @@ var exphbs = require('express-handlebars');
 var user = require('./models/user.js');
 var pport = require('./config/passport/passport.js');
 
+// if (process.env.JAWSDB_URL) {
+//   connection = mysql.createConnection(process.env.JAWSDB_URL);
+// }
 
 //models
 var models = require('./models');
@@ -58,7 +61,7 @@ require('./routes/htmlRoutes')(app);
 //auth routes for passport
 require('./routes/auth.js')(app, passport);
 // Render 404 page for any unmatched routes
-app.get('*', function (req, res) {
+app.get('*', function(req, res) {
   res.render('404');
 });
 
@@ -70,17 +73,16 @@ if (process.env.NODE_ENV === 'test') {
   syncOptions.force = true;
 }
 
-
 // Starting the server, syncing our models ------------------------------------/
-models.sequelize.sync().then(function () {
+models.sequelize.sync().then(function() {
   console.log('Nice! Database looks fine');
 
-  app.listen(PORT, function () {
+  app.listen(PORT, function() {
     console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
   });
 
   // Passport
-  app.get('/', function (req, res) {
+  app.get('/', function(req, res) {
     res.send('Welcome to Passport with Sequelize');
   });
 });
