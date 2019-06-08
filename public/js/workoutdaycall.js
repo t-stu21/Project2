@@ -8,10 +8,18 @@ $(document).ready(function() {
   // console.log(scheduleTemplate);
 
   function arg_calCalc(calcGender, calcWeight, calcHeight, calcAge) {
-    if (calcGender === 'Male') {
-      return (66 + (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 - 700).toFixed(0);
-    } else if (calcGender === 'Female') {
-      return (655 + (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 - 500).toFixed(0);
+    if (calcGender === "Male") {
+      return (
+        66 +
+        (6.2 * calcWeight + 12.7 * calcHeight - 6.76 * calcAge) * 1.55 -
+        700
+      ).toFixed(0);
+    } else if (calcGender === "Female") {
+      return (
+        655 +
+        (4.35 * calcWeight + 4.7 * calcHeight - 4.7 * calcAge) * 1.55 -
+        500
+      ).toFixed(0);
     }
   }
 
@@ -75,15 +83,15 @@ $(document).ready(function() {
   let grabID = () => {
     let userID = 0;
     let url = window.location.search;
-    if (url.indexOf('?user_id=') !== -1) {
-      let uid = url.split('=')[1];
+    if (url.indexOf("?user_id=") !== -1) {
+      let uid = url.split("=")[1];
       userID = parseInt(uid);
     }
     return userID;
   };
 
   let findUser = () => {
-    $.get('/api/users', function(data) {
+    $.get("/api/users", function(data) {
       try {
         let u;
         for (var i = 0; i < data.length; i++) {
@@ -92,15 +100,15 @@ $(document).ready(function() {
             u = data[i];
           }
         }
-        //console.log('u: ', u);
+        console.log("u: ", u);
         let calIn = u.WorkoutDays[0].caloriesin;
         let daily = u.WorkoutDays.length;
 
-        $('#ch1').html(daily);
-        $('#topL').html(calIn);
-        $('#topR').html(u.daily_cals);
+        $("#ch1").html(daily);
+        $("#topL").html(calIn);
+        $("#topR").html(u.daily_cals);
       } catch {
-        console.log('Undefined User');
+        console.log("Undefined User");
       }
       //return u;
     });
