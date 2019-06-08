@@ -56,7 +56,7 @@ $(document).ready(function() {
       <h2 class="card-title">Workout Day for User ${workoutday.UserId}</h2>
       <h5 class="card-text">${workoutday.workout}</h5>
       <h5 class="card-text">Time Duration: ${workoutday.duration} Minutes</h5>
-      <h5 class="card-text">${workoutday.createdAt}</h5>
+      <h5 class="card-text">${workoutday.createdAt.slice(0, -14)}</h5>
       <a href="/addworkout?workoutday_id=${workoutday.id}" class="edit btn btn-info">Edit Workout</a>
     </div>
   </div>`;
