@@ -44,15 +44,10 @@
         <div class="col-md-2 col-sm-2 wrk">
             <a class="btn btn-light form-submit flt" href="/workoutday">Go to WorkoutDay</a>
         </div>
-        <div class="col-md-2 col-sm-2 wrk">
-            <a class="btn btn-light form-submit flt" href="/users">Manage Users</a>
-        </div>
-
-
-
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                <form id="addworkout">
+                <form class="p-4" id="addworkout">
+
                     <div class="form-group wrkout">
                         <div class="form-row">
                             <label for="workout">Workout</label>
@@ -168,37 +163,7 @@
                                 Please provide height in feet.
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-6">
-                                <label for="calories-in">Calories In</label>
-                                <select class="form-control exercise no-margin text-center" id="calories-in" required>
-                                    <option>100</option>
-                                    <option>200</option>
-                                    <option>300</option>
-                                    <option>400</option>
-                                    <option selected>500</option>
-                                    <option>600</option>
-                                    <option>700</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6 mb-6">
-                                <label for="calories-out wrkout">Calories Out</label>
-                                <select class="form-control exercise no-margin text-center" id="calories-out" required>
-                                    <option>10</option>
-                                    <option>20</option>
-                                    <option>30</option>
-                                    <option>40</option>
-                                    <option selected>50</option>
-                                    <option>60</option>
-                                    <option>70</option>
-                                    <option>80</option>
-                                    <option>90</option>
-                                    <option>100</option>
-                                    <option>110</option>
-                                    <option>120</option>
-                                </select>
-                            </div>
-                        </div>
+
                         <div>
                             <label for="duration">Workout Duration in Mins</label>
                             <select class="form-control exercise no-margin text-center" id="duration" required>
@@ -217,12 +182,13 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="category">Select User:</label>
+                            <label for="category">User:</label>
                             <select class="custom-select exercise no-margin text-center" id="user">
                             </select>
                         </div>
-                        <br />
+
                         <button type="submit" class="btn btn-success form-submit" id="addworkout">Submit</button>
+
                     </div>
                 </form>
             </div>
