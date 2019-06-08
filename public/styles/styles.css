@@ -711,7 +711,7 @@ body {
   border-radius: 50%;
   color: white;
   background-color: skyblue;
-  background: radial-gradient(circle at 100px 100px, lime, #000);
+  background: radial-gradient(circle at 50px 50px, lime, #000);
 }
 
 .rectangle-container {
