@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // Getting jQuery references to the workoutday body, title, form, and user select
   //let bodyInput = $("#body");
   let addworkoutForm = $('#addworkout');
@@ -39,14 +39,32 @@ $(document).ready(function() {
       console.log('Error with NULL values');
       return;
     }
+
+    //calculations for calories burned
+    let intensity = workoutSelect.val().trim();
+    let time = durationInput.val().trim();
+    let theUser = userSelect.val();
+
+    function calBurnCalc() {
+      if (intensity < 3) {
+        return (time * 6).toFixed(0);
+      } else if (3 < intensity < 7) {
+        return (time * 8).toFixed(0)
+      } else {
+        return (time * 10).toFixed(0);
+      }
+    }
     //TODO add caloriesout maybe for dummy data
     // Constructing a newWorkoutDay object to hand to the database
     let newWorkoutDay = {
       caloriesin: workoutSelect.val().trim(),
+      caloriesout: calBurnCalc(),
       workout: workoutSelect.find('option:selected').text(),
       duration: durationInput.val().trim(),
       UserId: userSelect.val()
     };
+
+    console.log(newWorkoutDay);
 
     // If we're updating a workoutday run updateWorkoutDay to update a workoutday
     // Otherwise run submitWorkoutDay to create a whole new workoutday
@@ -60,7 +78,7 @@ $(document).ready(function() {
 
   // Submits a new workoutday and brings user to workoutday page upon completion
   function submitWorkoutDay(workoutday) {
-    $.post('/api/workoutdays', workoutday, function() {
+    $.post('/api/workoutdays', workoutday, function () {
       window.location.href = '/workoutday';
     });
   }
@@ -78,7 +96,7 @@ $(document).ready(function() {
       default:
         return;
     }
-    $.get(queryUrl, function(data) {
+    $.get(queryUrl, function (data) {
       if (data) {
         console.log(data.UserId || data.id);
         // If this workoutday exists, prefill our addworkout forms with its data
@@ -126,7 +144,7 @@ $(document).ready(function() {
       method: 'PUT',
       url: '/api/workoutdays',
       data: workoutday
-    }).then(function() {
+    }).then(function () {
       window.location.href = '/workoutday';
     });
   }
