@@ -1,0 +1,61 @@
+<div id="schedule-template" type="text/x-handlebars-template">
+
+    <div class="row">
+        <div class="container-fluid">
+            <div class="app">
+                <div class="header">
+                    <div class="fat-burning">
+                        <span class="title">
+                            Todays Result
+                        </span>
+                        <span class="result">
+                            <span class="num">0000</span>
+                            <span class="unit">
+                                Kcal
+                            </span>
+                        </span>
+                    </div>
+                    <a href="/"><span style="font-size: 90px; color: lime;">
+                            <i class="fas fa-heartbeat"></i>
+                        </span></i></a>
+                    <div class="user-attendance">
+                        <span class="title text-center goal">
+                            Daily Goal
+                        </span>
+                        <span class="result">
+                            <div class="num" id="goals">{{calorieShit.calories}}</div>
+                            <span class="unit" id="goal-unit">
+                                Kcal
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="app-title">
+                    <div class="title-text text-center">Alyve</div>
+                </div>
+                <div class="body">
+                    <div class="attendance" id="goal">
+                        {{#each schedule.days}}
+                        <ul>
+                            <li>{{name}}
+                                <span><a href="/workoutday" class="lyve">{{status}}</a></span>
+                                <span><a href="/workoutday" class="date">{{number}}</a></span>
+                                <span class="circle present"></span>
+                            </li>
+                        </ul>
+                        {{/each}}
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <h1>Results:</h1>
+                        <p class="goalsmet">10</p>
+                    </div>
+                    <div class="card">
+                        <h1>Alyve Score:</h1>
+                        <p class="goalsmet">25896</p>
+                    </div>
+
+                </div>
+
+            </div>
