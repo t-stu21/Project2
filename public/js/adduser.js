@@ -1,5 +1,4 @@
-
-$(document).ready(function () {
+$(document).ready(function() {
   let nameInput = $('#name');
   let passwordInput = $('#password');
   let emailInput = $('#email');
@@ -10,7 +9,6 @@ $(document).ready(function () {
   let heightFeetInput = $('#height-feet');
   let heightInchesInput = $('#height-inches');
   //let totalHeightInches = Number(heightFeet) * 12 + Number(heightInches);
-
 
   // Adding event listeners to the form to create a new object, and the button to delete
   // an User
@@ -91,9 +89,8 @@ $(document).ready(function () {
 
     console.log('userData: ', userData);
     addUser(userData);
-
   }
-  // dfassdffds
+
   // A function for creating an user. Calls getUsers upon completion
   function addUser(userData) {
     $.post('/api/users', userData).then(() => {
@@ -101,5 +98,30 @@ $(document).ready(function () {
     });
   }
 
-
+  // Example starter JavaScript for disabling form submissions if there are invalid fields
+  (function() {
+    'use strict';
+    window.addEventListener(
+      'load',
+      function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        let forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        let validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener(
+            'click',
+            function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            },
+            false
+          );
+        });
+      },
+      false
+    );
+  })();
 });

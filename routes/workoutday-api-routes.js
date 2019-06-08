@@ -5,20 +5,21 @@
 // =============================================================
 
 // Requiring our models
-var db = require("../models");
+var db = require('../models');
 
 // Routes
 // =============================================================
 module.exports = function(app) {
   // GET route for getting all of the workoutdays
-  app.get("/api/workoutdays", function(req, res) {
+  app.get('/api/workoutdays', function(req, res) {
     var query = {};
-    if (req.query.User_id) {
-      query.UserId = req.query.User_id;
+    if (req.query.user_id) {
+      query.UserId = req.query.user_id;
     }
-    // 1. Add a join here to include all of the Users to these workoutdays
+
     db.WorkoutDay.findAll({
-      where: query
+      where: query,
+      include: [db.User]
     })
       .then(function(dbWorkoutDay) {
         res.json(dbWorkoutDay);
@@ -30,15 +31,16 @@ module.exports = function(app) {
   });
 
   // Get route for retrieving a single workoutday
-  app.get("/api/workoutdays/:id", function(req, res) {
+  app.get('/api/workoutdays/:id', function(req, res) {
     // 2. Add a join here to include the User who wrote the WorkoutDay
     db.WorkoutDay.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [db.User]
     })
       .then(function(dbWorkoutDay) {
-        console.log(dbWorkoutDay);
+        //console.log(dbWorkoutDay);
         res.json(dbWorkoutDay);
       })
       .catch()
@@ -48,7 +50,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new workoutday
-  app.post("/api/workoutdays", function(req, res) {
+  app.post('/api/workoutdays', function(req, res) {
     db.WorkoutDay.create(req.body)
       .then(function(dbWorkoutDay) {
         res.json(dbWorkoutDay);
@@ -60,7 +62,7 @@ module.exports = function(app) {
   });
 
   // DELETE route for deleting workoutdays
-  app.delete("/api/workoutdays/:id", function(req, res) {
+  app.delete('/api/workoutdays/:id', function(req, res) {
     db.WorkoutDay.destroy({
       where: {
         id: req.params.id
@@ -76,7 +78,7 @@ module.exports = function(app) {
   });
 
   // PUT route for updating workoutdays
-  app.put("/api/workoutdays", function(req, res) {
+  app.put('/api/workoutdays', function(req, res) {
     db.WorkoutDay.update(req.body, {
       where: {
         id: req.body.id
