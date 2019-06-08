@@ -101,12 +101,12 @@ $(document).ready(function() {
           }
         }
         console.log("u: ", u);
-        let calOut = u.WorkoutDays[0].caloriesout;
+        let calOut = u.daily_cals;
         let daily = u.WorkoutDays.length;
         let wrkTime = u.WorkoutDays[0].duration;
         let wrknum = u.WorkoutDays[0].workout.length;
         let dlyCals = u.goal_weight;
-        console.log(u.WorkoutDays);
+        console.log(calOut);
         $("#ch4").html(dlyCals);
         $("#ch3").html(wrknum);
         $("#ch2").html(wrkTime);
