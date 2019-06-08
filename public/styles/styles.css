@@ -760,7 +760,8 @@ body {
   color: white !important;
 }
 
-#btm-btn {
+#btm-btn,
+#btm-btn2 {
   width: 100%;
   background-color: skyblue;
 }
