@@ -1,4 +1,6 @@
+
 $(document).ready(function() {
+
   // workoutdayContainer holds all of our workoutdays
   var workoutdayContainer = $('.workout-container');
   var workoutdayCategorySelect = $('#category');
@@ -26,7 +28,7 @@ $(document).ready(function() {
     if (userId) {
       userId = '/?user_id=' + userId;
     }
-    $.get('/api/workoutdays' + userId, function(data) {
+    $.get('/api/workoutdays' + userId, function (data) {
       console.log('WorkoutDays', data);
       workoutdays = data;
       if (!workoutdays || !workoutdays.length) {
@@ -36,6 +38,8 @@ $(document).ready(function() {
       }
     });
   }
+
+
 
   // InitializeRows handles appending all of our constructed workoutday HTML inside workoutdayContainer
   function initializeRows() {
